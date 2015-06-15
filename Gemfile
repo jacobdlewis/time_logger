@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
-
-
+ruby '2.2.2'
 
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jbuilder', '~> 2.0'
@@ -14,10 +13,16 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
+  gem 'faker'
+  gem 'fabrication'
   gem 'spring'
   gem 'web-console', '~> 2.0'
   gem 'rspec-rails'
-  gem 'shoulda-matchers'
-
 end
 
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'shoulda-matchers'
+end
