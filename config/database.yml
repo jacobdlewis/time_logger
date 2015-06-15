@@ -78,8 +78,4 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: time_logger_production
-  username: time_logger
-  password: <%= ENV['TIME_LOGGER_DATABASE_PASSWORD'] %>
+
