@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
+  has_many :time_entries
 
   validates :email, :name, :username, presence: true
   validates :name, length: { minimum: 3 }
