@@ -15,8 +15,6 @@ RSpec.describe TimeEntry, type: :model do
     it { should validate_numericality_of(:personal_mileage) }
     it { should validate_presence_of(:hours_worked) }
     it { should validate_numericality_of(:hours_worked) }
-    it { should validate_presence_of(:created_at) }
-    it { should validate_presence_of(:updated_at) }
   end
   describe "belongs to" do
     it { should belong_to(:user) }

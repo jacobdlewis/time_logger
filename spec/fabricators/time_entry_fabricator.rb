@@ -1,5 +1,5 @@
 Fabricator(:time_entry) do
-  date   { Faker::Date }
+  date   { Faker::Date.forward(1) }
   client_id             "12"
   category_id           "8"
   comment               { Faker::Lorem.sentence }
