@@ -20,6 +20,10 @@ class TimeEntriesController < ApplicationController
     @time_entries = @user.time_entries
   end
 
+  def show
+    @time_entry = TimeEntry.find(params["id"])
+  end
+
   protected
 
   def time_entry_params

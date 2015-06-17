@@ -1,0 +1,24 @@
+%h1 Time Entry for #{current_user.name}
+
+%table
+  %thead
+    %th Date
+    %th Client
+    %th Category
+    %th Comment
+    %th Area
+    %th Business Mileage
+    %th Personal Mileage
+    %th Hours Worked
+  %tbody
+    %tr
+      %td #{@time_entry.date.strftime("%b %d, %Y")}
+      %td #{@time_entry.client_id}
+      %td #{@time_entry.category_id}
+      %td #{@time_entry.comment}
+      %td #{@time_entry.area}
+      %td #{@time_entry.business_mileage}
+      %td #{@time_entry.personal_mileage}
+      %td #{@time_entry.hours_worked}
+
+= link_to "Back to all entries", user_time_entries_path(current_user.id)

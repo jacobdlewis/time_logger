@@ -2,5 +2,5 @@
 
 %ul
   -@time_entries.each do |entry|
-    %li= "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours"
+    %li= link_to "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours", user_time_entry_path(current_user.id, entry.id)
 
