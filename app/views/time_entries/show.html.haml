@@ -22,3 +22,5 @@
       %td #{@time_entry.hours_worked}
 
 = link_to "Back to all entries", user_time_entries_path(current_user.id)
+= link_to "Update time entry", edit_user_time_entry_path( current_user, @time_entry)
+

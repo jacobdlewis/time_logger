@@ -1,13 +1,4 @@
 %h1 Enter time
 
-= simple_form_for @time_entry, url: user_time_entries_path do |f|
-  = f.input :date, as: :string, label: "Enter a Date"
-  = f.input :client_id, label: "Client/tract name"
-  = f.input :category_id, label: "Select a work category"
-  = f.input :comment
-  = f.input :area
-  = f.input :business_mileage
-  = f.input :personal_mileage
-  = f.input :hours_worked
-  = f.button :submit, "Save Time Entry"
+=render partial: 'time_entries/form', locals: { user: current_user }
 
