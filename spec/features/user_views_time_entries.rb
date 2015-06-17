@@ -1,5 +1,5 @@
 require 'spec_helper'
-feature "User creates a time entry", js: true do
+feature "User views their time entries", js: true do
 
   before do
     visit "/"
@@ -28,6 +28,9 @@ feature "User creates a time entry", js: true do
     fill_in "Hours worked", with: 5
     click_on "Save Time Entry"
     page.should have_content("Your time for #{Date.today.strftime("%A, %B %d, %Y")} was saved successfully")
+    click_on "Show Logged Time"
+    page.should have_content("Time Entries for Smitty")
+    page.should have_content("#{Date.today.strftime("%A, %B %d, %Y")} - 5 hours")
   end
 
 end

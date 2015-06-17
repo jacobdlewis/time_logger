@@ -1,0 +1,6 @@
+%h1 Time Entries for #{current_user.name}
+
+%ul
+  -@time_entries.each do |entry|
+    %li= "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours"
+

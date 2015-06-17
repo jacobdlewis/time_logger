@@ -15,6 +15,11 @@ class TimeEntriesController < ApplicationController
     end
   end
 
+  def index
+    @user = User.find(current_user.id)
+    @time_entries = @user.time_entries
+  end
+
   protected
 
   def time_entry_params
