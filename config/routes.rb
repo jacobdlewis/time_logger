@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create] do
-    resources :time_entries, only: [:create, :new, :update, :index, :show]
+    resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
   end
 
   # Example of regular route:
