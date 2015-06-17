@@ -1,0 +1,7 @@
+%h1 Create a new category
+
+= simple_form_for @category do |f|
+  = f.input :name, label: "Enter a category name"
+  = f.button :submit, "Save category"
+
+=link_to "Cancel", categories_path

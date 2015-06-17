@@ -1,0 +1,7 @@
+%h1 Current categories:
+
+%ul
+  -@categories.each do |category|
+    %li #{category.name}
+
+=link_to "Create new category", new_category_path
