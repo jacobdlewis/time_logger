@@ -16,6 +16,7 @@
             - unless controller_name == "user_sessions"
               %li= link_to "Sign In", new_user_session_path
           - else
+            %li= link_to "Home", root_path
             %li= link_to "Sign Out", user_session_path, method: :delete
     %p.notice= notice
     %p.alert= alert
