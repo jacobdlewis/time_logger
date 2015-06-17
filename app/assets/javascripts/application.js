@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery-ui
+
+$(function() {
+  $('#time_entry_date').datepicker();
+});

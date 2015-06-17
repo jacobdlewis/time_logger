@@ -1,7 +1,7 @@
 %h1 Enter time
 
 = simple_form_for @time_entry, url: user_time_entries_path do |f|
-  = f.input :date, as: :date, label: "Enter a Date"
+  = f.input :date, as: :string, label: "Enter a Date"
   = f.input :client_id, label: "Client/tract name"
   = f.input :category_id, label: "Select a work category"
   = f.input :comment

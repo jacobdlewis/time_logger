@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.2.2'
+ruby '2.1.0'
 
+gem 'american_date'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'pg'
 gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
@@ -27,5 +29,6 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'poltergeist'
   gem 'shoulda-matchers'
 end

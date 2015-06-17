@@ -1,4 +1,5 @@
-feature "User creates a time entry" do
+require 'spec_helper'
+feature "User creates a time entry", js: true do
 
   before do
     visit "/"
@@ -17,17 +18,15 @@ feature "User creates a time entry" do
     click_on "Log Time"
     page.should have_content("Sign Out")
     page.should have_content("Enter time")
-    within('.time_entry_date') do
-      find('#time_entry_date_1i').click
-      find('option', :text => 2015).click
-      find('#time_entry_date_2i').click
-      find('option', :text => "June").click
-      find('#time_entry_date_3i').click
-      find('option', :text => 15).click
-    end
-    # page.execute_script("$('#time_entry_date_1i').datepicker('setDate', '06')")
-    # page.execute_script("$('#time_entry_date_2i').datepicker('setDate', '15')")
-    # page.execute_script("$('#time_entry_date_3i').datepicker('setDate', '2015')")
+    # within('.time_entry_date') do
+    #   find('#time_entry_date_1i').click
+    #   find('option', :text => 2015).click
+    #   find('#time_entry_date_2i').click
+    #   find('option', :text => "June").click
+    #   find('#time_entry_date_3i').click
+    #   find('option', :text => 15).click
+    # end
+    page.execute_script("$('#time_entry_date').datepicker('setDate', '#{Date.today.strftime("%m/%d/%Y")}')")
     fill_in "Client/tract name", with: 1
     fill_in "Select a work category", with: 2
     fill_in "Comment", with: "n/a"
