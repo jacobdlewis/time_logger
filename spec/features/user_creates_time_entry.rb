@@ -26,7 +26,7 @@ feature "User creates a time entry", js: true do
     #   find('#time_entry_date_3i').click
     #   find('option', :text => 15).click
     # end
-    page.execute_script("$('#time_entry_date').datepicker('setDate', '#{Date.today.strftime("%m/%d/%Y")}')")
+    page.execute_script("$('#time_entry_date').datepicker('setDate', '#{Date.today.strftime("%Y-%m-%d")}')")
     fill_in "Client/tract name", with: 1
     fill_in "Select a work category", with: 2
     fill_in "Comment", with: "n/a"

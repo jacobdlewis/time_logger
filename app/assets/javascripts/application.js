@@ -16,5 +16,7 @@
 //= require jquery-ui
 
 $(function() {
-  $('#time_entry_date').datepicker();
+  $('#time_entry_date').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
 });
