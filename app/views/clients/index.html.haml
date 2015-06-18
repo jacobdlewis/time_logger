@@ -1,0 +1,19 @@
+%h1 Current client list:
+
+%table
+  %thead
+    %th First name
+    %th Last name
+    %th
+    %th
+  %tbody
+    -@clients.each do |client|
+      %tr
+        %td #{client.first_name}
+        %td #{client.last_name}
+        %td
+          =link_to "Update", edit_client_path(client.id)
+        %td
+          =link_to "Delete", client_path(client.id), method: :delete
+
+=link_to "Add a client", new_client_path

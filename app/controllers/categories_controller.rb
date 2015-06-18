@@ -35,6 +35,7 @@ class CategoriesController < ApplicationController
       redirect_to categories_path, notice: "#{@category.name} was updated successfully."
     else
       flash.alert = "Please fix the errors below to continue."
+      render :edit
     end
   end
 

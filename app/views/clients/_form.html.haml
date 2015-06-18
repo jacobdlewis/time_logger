@@ -1,0 +1,4 @@
+=simple_form_for @client do |f|
+  = f.input :first_name, label: "Enter the client's first name"
+  = f.input :last_name, label: "Enter the client's last name"
+  = f.button :submit, "Save client"
