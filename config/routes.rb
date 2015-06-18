@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create] do
     resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
   end
-  resources :categories, only: [:new, :index, :create, :destroy]
+  resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,0 +1,7 @@
+%h1 Update category
+
+= simple_form_for @category do |f|
+  = f.input :name, label: "Enter a new category name"
+  = f.button :submit, "Update category"
+
+=link_to "Cancel", categories_path

@@ -11,6 +11,7 @@
       %td #{category.name}
       %td
         =link_to "Delete", category_path(category.id), method: :delete
-
+      %td
+        =link_to "Update", edit_category_path(category.id)
 
 =link_to "Create new category", new_category_path

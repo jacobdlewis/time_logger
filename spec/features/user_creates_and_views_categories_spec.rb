@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 feature "User creates and views categories" do
 
   before do
