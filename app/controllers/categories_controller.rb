@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      redirect_to root_path, notice: "#{@category.name} was saved successfully."
+      redirect_to categories_path, notice: "#{@category.name} was saved successfully."
     else
       flash.alert = "Please fix the errors below to continue."
       render :new
@@ -16,6 +16,12 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to categories_path, notice: "#{@category.name} was deleted successfully."
   end
 
   protected

@@ -1,7 +1,16 @@
 %h1 Current categories:
 
-%ul
+%table
+  %thead
+    %th Category name
+    %th
+    %th
+  %tbody
   -@categories.each do |category|
-    %li #{category.name}
+    %tr
+      %td #{category.name}
+      %td
+        =link_to "Delete", category_path(category.id), method: :delete
+
 
 =link_to "Create new category", new_category_path
