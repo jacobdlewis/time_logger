@@ -38,16 +38,15 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     arel (6.0.0)
+    autoprefixer-rails (5.2.0.1)
+      execjs
+      json
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bitters (1.0.0)
-      bourbon (>= 3.2)
-      sass (>= 3.2)
-      thor
-    bourbon (4.2.3)
-      sass (~> 3.4)
-      thor
+    bootstrap-sass (3.3.5)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -115,9 +114,6 @@ GEM
     multi_json (1.11.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    neat (1.7.2)
-      bourbon (>= 4.0)
-      sass (>= 3.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oauth (0.4.7)
@@ -231,7 +227,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bitters
+  bootstrap-sass (~> 3.3.5)
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -243,7 +239,6 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   launchy
-  neat
   pg
   poltergeist
   rails (= 4.2.1)
