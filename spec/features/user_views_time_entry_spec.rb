@@ -4,6 +4,8 @@ feature "User views their time entries", js: true do
   before do
     visit "/"
     click_on "Sign In"
+    Fabricate(:category).save
+    Fabricate(:client).save
     user = Fabricate(:user, name: "Smitty")
     fill_in "Email", with: user.email
     fill_in "Password", with: "password1"
@@ -19,8 +21,8 @@ feature "User views their time entries", js: true do
     page.should have_content("Sign Out")
     page.should have_content("Enter time")
     page.execute_script("$('#time_entry_date').datepicker('setDate', '#{Date.today.strftime("%Y-%m-%d")}')")
-    fill_in "Client/tract name", with: 1
-    fill_in "Select a work category", with: 2
+    select('Duck, Ronald', :from => 'time_entry_client_id')
+    select('Business stuff', :from => 'time_entry_category_id')
     fill_in "Comment", with: "n/a"
     fill_in "Area", with: "02B"
     fill_in "Business mileage", with: 12

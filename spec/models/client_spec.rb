@@ -17,4 +17,7 @@ RSpec.describe Client, type: :model do
     it { should allow_value("Suzanne").for(:first_name) }
     it { should allow_value("Kinsey").for(:last_name) }
   end
+  it "should have a working factory" do
+      Fabricate.build(:client).should be_valid
+    end
 end

@@ -14,4 +14,7 @@ RSpec.describe Category, type: :model do
   describe "should be valid with proper name formatting" do
     it { should allow_value("Management plan").for(:name) }
   end
+  it "should have a working factory" do
+      Fabricate.build(:category).should be_valid
+    end
 end
