@@ -1,4 +1,4 @@
 %h1 Enter time
 
-=render partial: 'time_entries/form', locals: { user: current_user }
+=render partial: 'time_entries/form', locals: { user: current_user, time_entry: @txime_entry, clients: @clients, categories: @categories }
 

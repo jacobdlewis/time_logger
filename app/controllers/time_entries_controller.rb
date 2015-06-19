@@ -3,7 +3,9 @@ class TimeEntriesController < ApplicationController
   before_filter :load_time_entry
 
   def new
+    @clients = Client.all
     @time_entry = TimeEntry.new
+    @categories = Category.all
   end
 
   def edit
