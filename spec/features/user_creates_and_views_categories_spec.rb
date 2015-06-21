@@ -5,7 +5,7 @@ feature "User creates and views categories" do
   before do
     visit "/"
     click_on "Sign In"
-    user = Fabricate(:user, name: "Smitty")
+    user = Fabricate(:user, name: "Smitty", admin?: true)
     fill_in "Email", with: user.email
     fill_in "Password", with: "password1"
     click_button "Sign In"
