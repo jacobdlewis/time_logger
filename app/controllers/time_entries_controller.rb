@@ -40,7 +40,7 @@ class TimeEntriesController < ApplicationController
   end
 
   def show
-    @time_entry = TimeEntry.find(params["id"])
+    @time_entry = TimeEntry.joins(:category).joins(:client).find(params["id"])
   end
 
   protected
