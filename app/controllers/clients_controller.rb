@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-
+  load_and_authorize_resource
   def new
     @client = Client.new
   end

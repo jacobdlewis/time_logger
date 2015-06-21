@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.2'
 
-gem 'bitters'
+gem 'cancancan',  '~> 1.10'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
