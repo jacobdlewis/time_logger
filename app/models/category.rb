@@ -1,4 +1,5 @@
 class Category < ActiveRecord::Base
+  has_many :time_entries
 
   validates :name, presence: true
   validates :name, length: { minimum: 3 }

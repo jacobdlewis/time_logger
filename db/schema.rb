@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150621022658) do
+ActiveRecord::Schema.define(version: 20150621061216) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20150621022658) do
 
   create_table "time_entries", force: :cascade do |t|
     t.datetime "date"
-    t.string   "client_id"
-    t.string   "category_id"
+    t.integer  "client_id"
+    t.integer  "category_id"
     t.string   "comment"
     t.string   "area"
     t.integer  "business_mileage"
@@ -56,5 +56,7 @@ ActiveRecord::Schema.define(version: 20150621022658) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "time_entries", "categories"
+  add_foreign_key "time_entries", "clients"
   add_foreign_key "time_entries", "users"
 end

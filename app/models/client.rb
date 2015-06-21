@@ -1,4 +1,5 @@
 class Client < ActiveRecord::Base
+  has_many :time_entries
 
   validates :first_name, :last_name, presence: true
   validates :first_name, :last_name, length: { minimum: 2 }
