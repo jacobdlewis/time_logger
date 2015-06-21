@@ -2,8 +2,11 @@
 
 %h3 The world's newest time-logging application.
 
--if current_user
-  =link_to "Log Time", new_user_time_entry_path(current_user.id)
-  =link_to "Show Logged Time", user_time_entries_path(current_user)
-  =link_to "Categories", categories_path
-  =link_to "Clients", clients_path
+%div
+  -if current_user
+    %h2 Hours worked by category
+    = pie_chart @time_entries.group(:name).sum(:category_id)
+    %h2 Hours worked by client
+    = pie_chart @time_entries.group(:last_name).sum(:client_id)
+    %h2 Hours worked by day
+    = column_chart @time_entries.group_by_day(:date, format: '%A, %B %d, %Y').sum(:hours_worked)
