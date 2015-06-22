@@ -12,22 +12,43 @@
     = csrf_meta_tags
   %body
     %header
-      %nav
-        %ul
-          - if !logged_in?
-            - unless controller_name == "users"
-              %li= link_to "Sign Up", new_user_path
-            - unless controller_name == "user_sessions"
-              %li= link_to "Sign In", new_user_session_path
-          - else
-            %li= link_to "Home", root_path
-            -if current_user.admin?
-              %li=link_to "Reports", report_path
-            %li=link_to "Log Time", new_user_time_entry_path(current_user.id)
-            %li=link_to "Show Logged Time", user_time_entries_path(current_user)
-            %li=link_to "Categories", categories_path
-            %li=link_to "Clients", clients_path
-            %li= link_to "Sign Out", user_session_path, method: :delete
+      %div.fixed
+        %nav.top-bar
+          %ul.title-area
+            %li.name
+              %h1
+                =link_to "Time Logger", root_path
+            %li.toggle-topbar.menu-icon
+              %a(href="#")
+                %span Menu
+          %section.top-bar-section
+            %ul.right
+              - if !logged_in?
+                - unless controller_name == "users"
+                  %li
+                    = link_to "Sign Up", new_user_path
+                - unless controller_name == "user_sessions"
+                  %li
+                    = link_to "Sign In", new_user_session_path
+              - else
+                %li
+                  = link_to "Home", root_path
+                -if current_user.admin?
+                  %li
+                    =link_to "Reports", report_path
+                %li
+                  =link_to "Log Time", new_user_time_entry_path(current_user.id)
+                %li
+                  =link_to "Show Logged Time", user_time_entries_path(current_user)
+                %li
+                  =link_to "Categories", categories_path
+                %li
+                  =link_to "Clients", clients_path
+                %li
+                  = link_to "Sign Out", user_session_path, method: :delete
     %p.notice= notice
     %p.alert= alert
-    = yield
+    %div.container
+      %div.row
+        %div.small-10.columns.small-offset-1.main-section
+          = yield
