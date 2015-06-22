@@ -1,9 +1,35 @@
+$dark-purple: #643378;
+$light-purple: #a054b7;
+
 .container {
-  background-color: #643378;
+  background-color: $dark-purple;
+  width: 100%;
+  min-height: 100%;
 }
 
 .main-section {
   background-color: white;
   box-shadow: 0 0 3px white;
-  padding-top: 20px;
+  padding-top: 10px;
+  margin-top: 50px;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.report-card {
+  background-color: $dark-purple;
+  border: 1px solid black;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  padding: 0;
+  margin: 25px 0;
+  .report-title {
+    text-align: center;
+    h2 {
+      color: white;
+      margin: 0;
+    }
+  }
 }

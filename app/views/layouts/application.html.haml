@@ -46,9 +46,9 @@
                   =link_to "Clients", clients_path
                 %li
                   = link_to "Sign Out", user_session_path, method: :delete
-    %p.notice= notice
-    %p.alert= alert
     %div.container
       %div.row
-        %div.small-10.columns.small-offset-1.main-section
+        %div.small-12.columns.main-section
+          %p.notice= notice
+          %p.alert= alert
           = yield
