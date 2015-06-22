@@ -1,32 +1,38 @@
-%h1 Time Entry for #{current_user.name}
-
-%table
-  %tbody
-    %tr
-      %th Date
-      %td #{@time_entry.date.strftime("%b %d, %Y")}
-    %tr
-      %th Client
-      %td #{@time_entry.client.last_name}, #{@time_entry.client.first_name[0]}.
-    %tr
-      %th Category
-      %td #{@time_entry.category.name}
-    %tr
-      %th Comment
-      %td #{@time_entry.comment}
-    %tr
-      %th Area
-      %td #{@time_entry.area}
-    %tr
-      %th Bus. Mileage
-      %td #{@time_entry.business_mileage}
-    %tr
-      %th Pers. Mileage
-      %td #{@time_entry.personal_mileage}
-    %tr
-      %th Hours worked
-      %td #{@time_entry.hours_worked}
-
-= link_to "Back to all entries", user_time_entries_path(current_user.id)
-= link_to "Update time entry", edit_user_time_entry_path(current_user, @time_entry)
-
+%div.row
+  %div.small-column-12
+    %h1.page-title Time Entry for #{current_user.name}
+    %hr
+%div.row
+  %div.small-column-6.small-offset-5
+    %table
+      %tbody
+        %tr
+          %th Date
+          %td #{@time_entry.date.strftime("%b %d, %Y")}
+        %tr
+          %th Client
+          %td #{@time_entry.client.last_name}, #{@time_entry.client.first_name[0]}.
+        %tr
+          %th Category
+          %td #{@time_entry.category.name}
+        %tr
+          %th Comment
+          %td #{@time_entry.comment}
+        %tr
+          %th Area
+          %td #{@time_entry.area}
+        %tr
+          %th Bus. Mileage
+          %td #{@time_entry.business_mileage}
+        %tr
+          %th Pers. Mileage
+          %td #{@time_entry.personal_mileage}
+        %tr
+          %th Hours worked
+          %td #{@time_entry.hours_worked}
+%div.row
+  %div.small-column-6.small-offset-5
+    %button
+      = link_to "Back", user_time_entries_path(current_user.id)
+    %button
+      = link_to "Update entry", edit_user_time_entry_path(current_user, @time_entry)

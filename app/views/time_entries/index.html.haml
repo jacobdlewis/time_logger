@@ -1,6 +1,9 @@
-%h1 Time Entries for #{current_user.name}
-
-%ul
-  -@time_entries.each do |entry|
-    %li= link_to "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours", user_time_entry_path(current_user.id, entry.id)
+%div.row
+  %div.small-12.columns
+    %h1.page-title Time Entries for #{current_user.name}
+    %hr
+  %div.small-12.columns.time-entry-list
+    %ul
+    -@time_entries.each do |entry|
+      %li= link_to "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours", user_time_entry_path(current_user.id, entry.id)
 

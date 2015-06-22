@@ -7,6 +7,29 @@ $light-purple: #a054b7;
   min-height: 100%;
 }
 
+.ui-datepicker {
+  margin-top: 100px;
+  border: 1px solid $dark-purple;
+  .ui-datepicker-header {
+    border-bottom: 1px solid $dark-purple;
+    background-color: white;
+    text-align: center;
+  }
+  .ui-datepicker-title {
+    font-weight: bold;
+  }
+  .ui-datepicker-next:before {
+    content: " | ";
+  }
+  .ui-datepicker-today {
+    font-weight: bold;
+    background-color: $dark-purple;
+    a {
+      color: white;
+    }
+  }
+}
+
 .main-section {
   background-color: white;
   box-shadow: 0 0 3px white;
@@ -32,4 +55,23 @@ $light-purple: #a054b7;
       margin: 0;
     }
   }
+}
+
+.time-entry-list {
+  text-align: center;
+  a {
+    color: $dark-purple;
+  }
+}
+
+button {
+  background-color: $dark-purple;
+  a {
+    color: white;
+    decoration: none;
+  }
+}
+
+button:hover {
+  background-color: $light-purple;
 }

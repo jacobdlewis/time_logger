@@ -1,9 +1,30 @@
-%div
-  %h2 Hours by employee
-  = bar_chart @time_entries.group(:username).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}}}
-  %h2 Hours by category
-  = pie_chart @time_entries.group(:category_id).sum(:hours_worked)
-  %h2 Hours by client
-  = bar_chart @time_entries.group(:client_id).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Client"}}}
-  %h2 Mileage by employee
-  = bar_chart @time_entries.group(:username).sum(:business_mileage), {library: {hAxis: {title: "Business miles"}}}
+%div.row
+  %div.small-12.columns
+    %h1.page-title  Reporting Dashboard
+    %hr
+%div.row
+  %div.small-6.columns
+    %div.report-card
+      %div.report-title
+        %h2 Hours by employee
+      %div.report-content
+        = bar_chart @time_entries.group(:username).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}}}
+  %div.small-6.columns
+    %div.report-card
+      %div.report-title
+        %h2 Hours by category
+      %div.report-title
+        = pie_chart @time_entries.group(:category_id).sum(:hours_worked)
+%div.row
+  %div.small-6.columns
+    %div.report-card
+      %div.report-title
+        %h2 Hours by client
+      %div.report-content
+        = bar_chart @time_entries.group(:client_id).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Client"}}}
+  %div.small-6.columns
+    %div.report-card
+      %div.report-title
+        %h2 Mileage by employee
+      %div.report-content
+        = bar_chart @time_entries.group(:username).sum(:business_mileage), {library: {hAxis: {title: "Business miles"}}}
