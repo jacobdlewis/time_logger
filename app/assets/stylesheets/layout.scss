@@ -56,6 +56,9 @@ $light-purple: #a054b7;
     }
   }
 }
+.user-sign-in {
+  text-align: center;
+}
 
 .time-entry-list {
   text-align: center;
@@ -64,7 +67,7 @@ $light-purple: #a054b7;
   }
 }
 
-button {
+.button, button {
   background-color: $dark-purple;
   a {
     color: white;
@@ -72,6 +75,6 @@ button {
   }
 }
 
-button:hover {
+.button:hover, button:hover {
   background-color: $light-purple;
 }
