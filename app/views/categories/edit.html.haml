@@ -2,6 +2,7 @@
 
 = simple_form_for @category do |f|
   = f.input :name, label: "Enter a new category name"
-  = f.button :submit, "Update category"
+  = f.button :submit, "Update category", :class => "button"
 
-=link_to "Cancel", categories_path
+%button
+  =link_to "Cancel", categories_path
