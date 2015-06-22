@@ -37,7 +37,7 @@ feature "User views their time entries", js: true do
     page.should have_content("Time Entry for Smitty")
     page.should have_content("Category")
     page.should have_content("Bus. Mileage")
-    page.should have_content("Back to all entries")
+    page.should have_content("Back")
   end
 
 end
