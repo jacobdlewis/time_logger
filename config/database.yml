@@ -77,6 +77,6 @@ test:
 #
 production:
   <<: *default
-  database_time_logger_production
+  database: time_logger_production
   url: <%= ENV['DATABASE_URL'] %>
 
