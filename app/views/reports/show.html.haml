@@ -1,0 +1,9 @@
+%div
+  %h2 Hours by employee
+  = bar_chart @time_entries.group(:username).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}}}
+  %h2 Hours by category
+  = pie_chart @time_entries.group(:category_id).sum(:hours_worked)
+  %h2 Hours by client
+  = bar_chart @time_entries.group(:client_id).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Client"}}}
+  %h2 Mileage by employee
+  = bar_chart @time_entries.group(:username).sum(:business_mileage), {library: {hAxis: {title: "Business miles"}}}

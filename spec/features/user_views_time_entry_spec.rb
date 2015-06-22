@@ -36,7 +36,7 @@ feature "User views their time entries", js: true do
     click_on "#{Date.today.strftime("%A, %B %d, %Y")} - 5 hours"
     page.should have_content("Time Entry for Smitty")
     page.should have_content("Category")
-    page.should have_content("Business Mileage")
+    page.should have_content("Bus. Mileage")
     page.should have_content("Back to all entries")
   end
 

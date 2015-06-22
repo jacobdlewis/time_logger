@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
   resources :clients, only: [:new, :create, :index, :destroy, :edit, :update]
+  get '/reports/', to: 'reports#show', as: 'report'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
