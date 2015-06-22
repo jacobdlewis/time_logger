@@ -1,10 +1,12 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title TimeLogger
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
+    = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "//www.google.com/jsapi"
     = javascript_include_tag 'chartkick.js'
     = csrf_meta_tags

@@ -74,6 +74,9 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    foundation-rails (5.5.2.1)
+      railties (>= 3.1.0)
+      sass (>= 3.3.0, < 3.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     groupdate (2.4.0)
@@ -239,6 +242,7 @@ DEPENDENCIES
   database_cleaner
   fabrication
   faker
+  foundation-rails
   groupdate
   haml-rails
   jbuilder (~> 2.0)

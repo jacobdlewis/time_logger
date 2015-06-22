@@ -12,11 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require_tree .
 //= require jquery-ui
+//= require foundation
+
+$(document).foundation();
 
 $(function() {
   $('#time_entry_date').datepicker({
     dateFormat: "yy-mm-dd"
   });
 });
+
+$(function(){ $(document).foundation(); });
