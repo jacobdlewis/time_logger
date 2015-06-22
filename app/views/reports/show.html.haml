@@ -8,23 +8,23 @@
       %div.report-title
         %h2 Hours by employee
       %div.report-content
-        = bar_chart @time_entries.group(:username).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}}}
+        = bar_chart @time_entries.group(:username).sum(:hours_worked), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
   %div.small-6.columns
     %div.report-card
       %div.report-title
         %h2 Hours by category
       %div.report-title
-        = pie_chart @time_entries.group(:category_id).sum(:hours_worked)
+        = pie_chart @time_entries.group(:category_id).sum(:hours_worked), :library => {colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
 %div.row
   %div.small-6.columns
     %div.report-card
       %div.report-title
         %h2 Hours by client
       %div.report-content
-        = bar_chart @time_entries.group(:client_id).sum(:hours_worked), {library: {hAxis: {title: "Hours"}, vAxis: {title: "Client"}}}
+        = bar_chart @time_entries.group(:client_id).sum(:hours_worked), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
   %div.small-6.columns
     %div.report-card
       %div.report-title
         %h2 Mileage by employee
       %div.report-content
-        = bar_chart @time_entries.group(:username).sum(:business_mileage), {library: {hAxis: {title: "Business miles"}}}
+        = bar_chart @time_entries.group(:username).sum(:business_mileage), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
