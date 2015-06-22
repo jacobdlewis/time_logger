@@ -4,6 +4,13 @@
     %h2.subheader Track your hours & mileage on-the-go
 
 %div
+  -if !current_user
+    %div.row
+      %div.small-12.columns.user-sign-in
+        %button
+          =link_to "Sign Up", new_user_path
+        %button
+          =link_to "Sign In", new_user_session_path
   -if current_user
     %div.row
       %div.small-6.columns
@@ -11,13 +18,13 @@
           %div.report-title
             %h2 Hours worked by category
           %div.report-content
-            = pie_chart @time_entries.group(:name).sum(:category_id), :library => {:colors => ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+            = pie_chart @time_entries.group(:name).sum(:category_id), :library => {:colors => [ "#6969b3", "#a054b7", "#98c1d9", "#643378", "#faf8d4"]}
       %div.small-6.columns
         %div.report-card
           %div.report-title
             %h2 Hours worked by client
           %div.report-content
-            = pie_chart @time_entries.group(:last_name).sum(:client_id), :library => {:colors => ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+            = pie_chart @time_entries.group(:last_name).sum(:client_id), :library => {:colors => ["#6969b3", "#a054b7", "#98c1d9", "#643378", "#faf8d4"]}
     %div.row
       %div.small-6.columns
         %div.report-card
