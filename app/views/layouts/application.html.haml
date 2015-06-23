@@ -49,6 +49,7 @@
     %div.container
       %div.row
         %div.small-12.columns.main-section
-          %p.notice= notice
-          %p.alert= alert
-          = yield
+          %section#content
+          - flash.each do |key, message|
+            %div{ class: "flash-#{key}" }= message
+          %article= yield
