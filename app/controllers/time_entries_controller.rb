@@ -9,6 +9,8 @@ class TimeEntriesController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
+    @clients = Client.all
   end
 
   def create
