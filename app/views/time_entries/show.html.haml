@@ -35,4 +35,4 @@
     %button
       = link_to "Back", user_time_entries_path(current_user.id)
     %button
-      = link_to "Update entry", edit_user_time_entry_path(current_user, @time_entry)
+      = link_to "Update entry", edit_user_time_entry_path(current_user, @time_entry, @clients, @categories)
