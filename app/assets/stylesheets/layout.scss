@@ -56,6 +56,15 @@ $light-purple: #a054b7;
     }
   }
 }
+
+.report-navigation {
+  text-align: center;
+  list-style-type: none;
+  ul {
+    display: inline-block;
+  }
+}
+
 .user-sign-in {
   text-align: center;
 }
