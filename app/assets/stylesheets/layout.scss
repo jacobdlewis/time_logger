@@ -1,6 +1,10 @@
 $dark-purple: #643378;
 $light-purple: #a054b7;
 
+body, html {
+  background-color: $dark-purple;
+}
+
 .container {
   background-color: $dark-purple;
   width: 100%;

@@ -32,7 +32,7 @@
                     = link_to "Sign In", new_user_session_path
               - else
                 %li
-                  = link_to "Home", root_path
+                  =link_to "Home", root_path
                 -if current_user.admin?
                   %li
                     =link_to "Reports", report_path
@@ -45,11 +45,10 @@
                 %li
                   =link_to "Clients", clients_path
                 %li
-                  = link_to "Sign Out", user_session_path, method: :delete
-    %div.container
-      %div.row
-        %div.small-12.columns.main-section
-          %section#content
-          - flash.each do |key, message|
-            %div{ class: "flash-#{key}" }= message
-          %article= yield
+                  =link_to "Sign Out", user_session_path, method: :delete
+    %div.row
+      %div.small-12.columns.main-section
+        %section#content
+        - flash.each do |key, message|
+          %div{ class: "flash-#{key}" }= message
+        %article= yield
