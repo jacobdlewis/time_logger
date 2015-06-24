@@ -30,23 +30,23 @@
           %div.report-title
             %h2 Hours worked by category
           %div.report-content
-            = pie_chart @time_entries.group('categories.name').sum(:category_id), :library => {:colors => [ "#6969b3", "#a054b7", "#98c1d9", "#643378", "#faf8d4"]}
+            = pie_chart @time_entries.group('categories.name').sum(:category_id), :library => {:colors => [ "#6969b3", "plum", "#98c1d9", "#643378", "#faf8d4"]}
       %div.small-6.columns
         %div.report-card
           %div.report-title
             %h2 Hours worked by client
           %div.report-content
-            = pie_chart @time_entries.group(:last_name).sum(:client_id), :library => {:colors => ["#6969b3", "#a054b7", "#98c1d9", "#643378", "#faf8d4"]}
+            = pie_chart @time_entries.group(:last_name).sum(:client_id), :library => {:colors => ["#6969b3", "plum", "#98c1d9", "#643378", "#faf8d4"]}
     %div.row
       %div.small-6.columns
         %div.report-card
           %div.report-title
             %h2 Hours worked by day
           %div.report-content
-            = column_chart @time_entries.group_by_day(:date, format: '%A, %B %d, %Y').sum(:hours_worked), :library => {:colors => ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+            = column_chart @time_entries.group_by_day(:date, format: '%A, %B %d, %Y').sum(:hours_worked), :library => {:colors => ["#98c1d9", "#6969b3", "#faf8d4", "plum", "#643378"]}
       %div.small-6.columns
         %div.report-card
           %div.report-title
             %h2 Business mileage by day
           %div.report-content
-            = column_chart @time_entries.group_by_day(:date, format: '%A, %B %d, %Y').sum(:business_mileage), :library => {:colors => ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+            = column_chart @time_entries.group_by_day(:date, format: '%A, %B %d, %Y').sum(:business_mileage), :library => {:colors => ["#98c1d9", "#6969b3", "#faf8d4", "plum", "#643378"]}

@@ -26,7 +26,7 @@
       %div.report-title
         %h2 Hours by category
       %div.report-title
-        = pie_chart @time_entries.group('categories.name').sum(:hours_worked), :library => {colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+        = pie_chart @time_entries.group('categories.name').sum(:hours_worked), :library => {colors: ["#98c1d9", "#6969b3", "#faf8d4", "plum", "#643378"]}
 %div.row
   %div.small-6.columns
     %div.report-card
