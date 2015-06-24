@@ -30,8 +30,7 @@ feature "User Signs Up" do
     fill_in "Password", with: "password1"
     fill_in "Password confirmation", with: "food"
     click_on "Sign Up"
-    page.should have_css(".alert", text: "Please fix the errors below to continue.")
-
+    page.should have_css(".flash-alert", text: "Please fix the errors below to continue.")
     page.should have_css(".user_name .error", text: "can't be blank")
     page.should have_css(".user_email .error", text: "must be an email address")
     page.should have_css(".user_password_confirmation .error", text: "doesn't match Password")

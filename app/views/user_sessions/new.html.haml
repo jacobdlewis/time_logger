@@ -5,3 +5,7 @@
   = f.input :email
   = f.input :password
   = f.button :submit, "Sign In", :class => "button"
+
+%hr
+%h3 Forgot your password?
+= render partial: 'forgot_password_form'

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  get 'password_resets/create'
+  get 'password_resets/edit'
+  get 'password_resets/update'
 
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create] do
@@ -12,6 +16,8 @@ Rails.application.routes.draw do
   resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
   resources :clients, only: [:new, :create, :index, :destroy, :edit, :update]
   get '/reports/', to: 'reports#show', as: 'report'
+  resources :password_resets
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
