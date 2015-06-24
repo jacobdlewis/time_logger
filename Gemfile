@@ -24,6 +24,7 @@ group :development, :test do
   gem 'byebug'
   gem 'faker'
   gem 'fabrication'
+  gem 'letter_opener'
   gem 'pry'
   gem 'spring'
   gem 'web-console', '~> 2.0'
