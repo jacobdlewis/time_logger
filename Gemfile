@@ -33,6 +33,7 @@ end
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'email_spec'
   gem 'launchy'
   gem 'poltergeist'
   gem 'shoulda-matchers'
