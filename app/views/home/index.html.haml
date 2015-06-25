@@ -16,14 +16,14 @@
       %div.small-12.columns
         %ul.report-navigation
           %li.small-4.columns
-            %button
-              =link_to "This Week", root_path(duration: :week)
+            %button#week-button.btn-active
+              =link_to "Filtered by Week", root_path(duration: :week)
           %li.small-4.columns
-            %button
-              =link_to "This Month", root_path(duration: :month)
+            %button.report-button#month-button
+              =link_to "Filtered by Month", root_path(duration: :month)
           %li.small-4.columns
-            %button
-              =link_to "This Year", root_path(duration: :year)
+            %button.report-button#year-button
+              =link_to "Filtered by Year", root_path(duration: :year)
     %div.row
       %div.small-6.columns
         %div.report-card
