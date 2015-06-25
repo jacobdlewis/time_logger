@@ -7,8 +7,6 @@ RSpec.describe TimeEntry, type: :model do
     it { should validate_numericality_of(:client_id) }
     it { should validate_presence_of(:category_id) }
     it { should validate_numericality_of(:category_id) }
-    it { should validate_presence_of(:comment) }
-    it { should validate_presence_of(:area) }
     it { should validate_presence_of(:business_mileage) }
     it { should validate_numericality_of(:business_mileage) }
     it { should validate_presence_of(:personal_mileage) }

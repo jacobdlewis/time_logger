@@ -25,15 +25,15 @@ feature "User views their time entries", js: true do
     select('Business stuff', :from => 'time_entry_category_id')
     fill_in "Comment", with: "n/a"
     fill_in "Area", with: "02B"
-    fill_in "Business mileage", with: 12
-    fill_in "Personal mileage", with: 17
-    fill_in "Hours worked", with: 5
+    select("10", :from => "Business mileage")
+    select("30", :from => "Personal mileage")
+    select("8", :from => "Hours worked")
     click_on "Save Time Entry"
     page.should have_content("Your time for #{Date.today.strftime("%A, %B %d, %Y")} was saved successfully")
     click_on "Show Logged Time"
     page.should have_content("Time Entries for Smitty")
-    page.should have_content("#{Date.today.strftime("%A, %B %d, %Y")} - 5 hours")
-    click_on "#{Date.today.strftime("%A, %B %d, %Y")} - 5 hours"
+    page.should have_content("#{Date.today.strftime("%A, %B %d, %Y")} - 8 hours")
+    click_on "#{Date.today.strftime("%A, %B %d, %Y")} - 8 hours"
     page.should have_content("Time Entry for Smitty")
     page.should have_content("Category")
     page.should have_content("Bus. Mileage")

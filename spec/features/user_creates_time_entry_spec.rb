@@ -25,9 +25,9 @@ feature "User creates a time entry", js: true do
     select('Business stuff', :from => 'time_entry_category_id')
     fill_in "Comment", with: "n/a"
     fill_in "Area", with: "02B"
-    fill_in "Business mileage", with: 12
-    fill_in "Personal mileage", with: 17
-    fill_in "Hours worked", with: 5
+    select("10", :from => "Business mileage")
+    select("30", :from => "Personal mileage")
+    select("8", :from => "Hours worked")
     click_on "Save Time Entry"
     page.should have_content("Your time for #{Date.today.strftime("%A, %B %d, %Y")} was saved successfully")
   end
