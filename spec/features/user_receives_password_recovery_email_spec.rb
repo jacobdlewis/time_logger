@@ -25,6 +25,12 @@ feature "User creates a time entry" do
     current_email == "smitty@example.org"
     current_email.should have_subject("Password reset email")
     current_email.should have_body_text("smitty@example.org,\n\nYou requested to reset your password. To choose a new password, just follow this link:")
+    link = links_in_email(current_email).first
+    visit request_uri(link)
+    fill_in "Password", with: "password123"
+    fill_in "Password confirmation", with: "password123"
+    click_on "Update User"
+    page.should have_content "Password was successfully updated"
     current_path.should == root_path
   end
 

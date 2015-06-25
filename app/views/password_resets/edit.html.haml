@@ -1,5 +1,5 @@
 
-%h1 Choose a new password
+%h1 Choose a new password for #{@user.email}
 = form_for @user, :url => password_reset_path(@token), :html => {:method => :put} do |f|
   - if @user.errors.any?
     #error_explanation
@@ -9,10 +9,7 @@
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg
-  .field
-    = f.label :email
     %br/
-    = @user.email
   .field
     = f.label :password
     %br/
