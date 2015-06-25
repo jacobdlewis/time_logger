@@ -36,7 +36,6 @@ feature "User creates and views categories" do
     page.should have_content("Burning")
     page.should have_content("Management plan")
     page.should have_content("Update")
-    page.should have_content("Delete")
     click_link "Update"
     page.should have_content("Update category")
     fill_in "Enter a new category name", with: "Run in place"

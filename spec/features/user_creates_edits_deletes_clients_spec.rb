@@ -33,8 +33,6 @@ feature "User creates and views categories" do
     fill_in "Enter the client's last name", with: "Robinson"
     click_button "Save client"
     page.should have_content("Suzie Robinson was updated successfully!")
-    click_link "Delete"
-    page.should have_content("Suzie Robinson was removed from your client list successfully!")
   end
 
 end

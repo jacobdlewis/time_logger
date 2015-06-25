@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui/datepicker
 //= require reports
 //= require foundation
 //= require_tree .
-//= require jquery-ui/datepicker
-//= require foundation
+
+
 
 $(document).foundation();
 
