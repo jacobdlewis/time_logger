@@ -7,23 +7,18 @@
   -if !current_user
     %div.row
       %div.small-12.columns.user-sign-in
-        %button
-          =link_to "Sign Up", new_user_path
-        %button
-          =link_to "Sign In", new_user_session_path
+        =link_to "Sign Up", new_user_path, class: "button"
+        =link_to "Sign In", new_user_session_path, class: "button"
   -if current_user
     %div.row
       %div.small-12.columns
         %ul.report-navigation
           %li.small-4.columns
-            %button#week-button.btn-active
-              =link_to "Filtered by Week", root_path(duration: :week)
+            =link_to "Filtered by Week", root_path(duration: :week), class: "btn-active button", id: "week-button"
           %li.small-4.columns
-            %button.report-button#month-button
-              =link_to "Filtered by Month", root_path(duration: :month)
+            =link_to "Filtered by Month", root_path(duration: :month), class: "report-button button", id: "month-button"
           %li.small-4.columns
-            %button.report-button#year-button
-              =link_to "Filtered by Year", root_path(duration: :year)
+            =link_to "Filtered Year", root_path(duration: :year), class: "report-filter button", id: "year-button"
     %div.row
       %div.small-6.columns
         %div.report-card
