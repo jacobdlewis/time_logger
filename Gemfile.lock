@@ -78,6 +78,8 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    figaro (1.1.1)
+      thor (~> 0.14)
     foundation-rails (5.5.2.1)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -145,6 +147,12 @@ GEM
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
+    postmark (1.5.0)
+      json
+      rake
+    postmark-rails (0.10.0)
+      actionmailer (>= 3.0.0)
+      postmark (~> 1.5.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -264,6 +272,7 @@ DEPENDENCIES
   email_spec
   fabrication
   faker
+  figaro
   foundation-rails
   friendly_id
   groupdate
@@ -273,9 +282,11 @@ DEPENDENCIES
   jquery-ui-rails
   launchy
   letter_opener
+  mail
   neat
   pg
   poltergeist
+  postmark-rails
   pry
   puma
   rails (= 4.2.1)
