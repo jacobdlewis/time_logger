@@ -89,6 +89,13 @@ body, html {
 
 .button:hover, button:hover {
   background-color: $light-purple;
+  a {
+    color: white;
+  }
+}
+
+.btn-active {
+  background-color: $light-purple
 }
 
 // ****Alert/Notice formatting*****
