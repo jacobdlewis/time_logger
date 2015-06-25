@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
   def index
+    if current_user && current_user.admin?
+      redirect_to report_path
+    end
     if current_user
       @user = User.find(current_user.id)
       if params[:duration] == "year"

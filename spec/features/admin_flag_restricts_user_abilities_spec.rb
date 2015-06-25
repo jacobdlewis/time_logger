@@ -21,9 +21,9 @@ feature "non-admin user is restricted from viewing clients & categories" do
     page.should have_content "Enter time"
     click_link "Cancel"
     page.should have_content "Welcome to Time Logger"
-    click_link "Categories"
+    visit "/categories"
     page.should have_content "You are not authorized to access this page."
-    click_link "Client"
+    visit '/clients'
     page.should have_content "You are not authorized to access this page."
   end
 
