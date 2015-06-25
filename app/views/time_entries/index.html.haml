@@ -5,5 +5,5 @@
   %div.small-12.columns.time-entry-list
     %ul
     -@time_entries.each do |entry|
-      %li= link_to "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours", user_time_entry_path(current_user.id, entry.id)
+      %li= link_to "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours", user_time_entry_path(current_user, entry.id)
 

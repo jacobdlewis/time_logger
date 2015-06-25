@@ -28,7 +28,7 @@ class TimeEntriesController < ApplicationController
     @time_entry = TimeEntry.find(params[:id])
     @time_entry.assign_attributes(time_entry_params)
     if @time_entry.save
-      redirect_to user_time_entry_path(current_user.id, @time_entry.id), 
+      redirect_to user_time_entry_path(current_user, @time_entry.id), 
       notice: "Your entry was updated successfully"
     else
       flash.alert = "Please fix the errors below to continue."
