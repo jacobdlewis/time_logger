@@ -1,5 +1,7 @@
 class Category < ActiveRecord::Base
   has_many :time_entries
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :finders]
 
   validates :name, presence: true
   validates :name, length: { minimum: 3 }
