@@ -5,8 +5,8 @@
   = f.input :category_id, collection: @categories.map{ |c| ["#{c.name}", c.id]}
   = f.input :comment, :input_html => { :value => 'none' }
   = f.input :area, :input_html => { :value => '070' }
-  = f.input :business_mileage, default: 0
-  = f.input :personal_mileage, default: 0
+  = f.input :business_mileage, collection: 0..300, selected: 0
+  = f.input :personal_mileage, collection: 0..300, selected: 0
   = f.input :hours_worked
   = f.button :submit, "Save Time Entry", :class => "button"
 
