@@ -38,7 +38,7 @@ class TimeEntriesController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    @time_entries = @user.time_entries
+    @time_entries = @user.time_entries.order(:date)
   end
 
   def show

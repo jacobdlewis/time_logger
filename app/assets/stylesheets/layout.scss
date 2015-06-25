@@ -74,6 +74,9 @@ body, html {
 
 .time-entry-list {
   text-align: center;
+  li {
+    list-style-type: none;
+  }
   a {
     color: $dark-purple;
   }

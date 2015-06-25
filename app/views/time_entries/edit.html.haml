@@ -1,5 +1,4 @@
 %h1 Enter time
 
 =render partial: 'time_entries/form', locals: { user: current_user, time_entry: @time_entry }
-%button
-  = link_to "Cancel", root_path
+= link_to "Cancel", root_path, class: "button"

@@ -32,7 +32,5 @@
           %td #{@time_entry.hours_worked}
 %div.row
   %div.small-column-6.small-offset-5
-    %button
-      = link_to "Back", user_time_entries_path(current_user)
-    %button
-      = link_to "Update entry", edit_user_time_entry_path(current_user, @time_entry, @clients, @categories)
+    = link_to "Back", user_time_entries_path(current_user), class: "button"
+    = link_to "Update entry", edit_user_time_entry_path(current_user, @time_entry, @clients, @categories), class: "button"
