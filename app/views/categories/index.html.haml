@@ -4,15 +4,11 @@
   %thead
     %th Category name
     %th
-    %th
   %tbody
     -@categories.each do |category|
       %tr
         %td #{category.name}
         %td
           =link_to "Update", edit_category_path(category)
-        %td
-          =link_to "Delete", category_path(category), method: :delete
 
-%button
-  =link_to "Create new category", new_category_path
+=link_to "Create new category", new_category_path, class: "button"

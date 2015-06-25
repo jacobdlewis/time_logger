@@ -5,7 +5,6 @@
     %th First name
     %th Last name
     %th
-    %th
   %tbody
     -@clients.each do |client|
       %tr
@@ -13,8 +12,6 @@
         %td #{client.last_name}
         %td
           =link_to "Update", edit_client_path(client)
-        %td
-          =link_to "Delete", client_path(client), method: :delete
 
 
 =link_to "Add a client", new_client_path, class: "button"
