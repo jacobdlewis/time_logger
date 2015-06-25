@@ -3,8 +3,8 @@
   = f.input :date, as: :string, label: "Enter a Date"
   = f.input :client_id, collection: @clients.map{ |c| ["#{c.last_name}, #{c.first_name}", c.id]}
   = f.input :category_id, collection: @categories.map{ |c| ["#{c.name}", c.id]}
-  = f.input :comment, default: "n/a"
-  = f.input :area, default: "070"
+  = f.input :comment, :input_html => { :value => 'none' }
+  = f.input :area, :input_html => { :value => '070' }
   = f.input :business_mileage, default: 0
   = f.input :personal_mileage, default: 0
   = f.input :hours_worked
