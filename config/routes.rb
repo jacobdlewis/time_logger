@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :clients, only: [:new, :create, :index, :destroy, :edit, :update]
   get '/reports/', to: 'reports#show', as: 'report'
   resources :password_resets
+  get '/employees/', to: 'reports#employees', as: 'employees'
+  get 'employees/:id/report', to: 'reports#employee_report', as: 'employee_report'
 
 
   # Example of regular route:

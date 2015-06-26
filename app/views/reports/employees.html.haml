@@ -1,0 +1,11 @@
+.row
+  .small-10.columns.small-offset-1
+    %h1.page-title Employees
+    %hr
+    %table.employees-table
+      %tbody
+        -@employees.each do |employee|
+          %tr
+            %td
+              =link_to "See reports for #{employee.name}",   employee_report_path(employee)
+

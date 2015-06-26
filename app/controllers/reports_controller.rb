@@ -15,4 +15,8 @@ class ReportsController < ApplicationController
       end
     end
   end
+
+  def employees
+    @employees = User.all
+  end
 end
