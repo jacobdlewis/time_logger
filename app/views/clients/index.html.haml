@@ -1,17 +1,22 @@
-%h1 Current client list:
-
-%table
-  %thead
-    %th First name
-    %th Last name
-    %th
-  %tbody
-    -@clients.each do |client|
-      %tr
-        %td #{client.first_name}
-        %td #{client.last_name}
-        %td
-          =link_to "Update", edit_client_path(client)
-
-
-=link_to "Add a client", new_client_path, class: "button"
+.row
+  .small-10.columns.small-offset-1
+    %h1.page-title Current client list:
+    %hr
+    .row
+      .large-4.columns.large-offset-4
+        %table.categories-table
+          %thead
+            %th First name
+            %th Last name
+            %th
+          %tbody
+            -@clients.each do |client|
+              %tr
+                %td #{client.first_name}
+                %td #{client.last_name}
+                %td
+                  =link_to "Update", edit_client_path(client)
+    .row
+      .large-6.columns.large-offset-4
+        =link_to "Add a client", new_client_path, class: "button"
+        =link_to "Cancel", root_path, class: "button"

@@ -1,5 +1,7 @@
-%h1 Update client
+.row
+  .small-10.columns.small-offset-1
+    %h1.page-title Update client
+    %hr
+    =render partial: "clients/form"
 
-=render partial: "clients/form"
-
-=link_to "Cancel", clients_path, class: "button"
+    =link_to "Cancel", clients_path, class: "button"
