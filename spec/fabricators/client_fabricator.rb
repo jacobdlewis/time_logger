@@ -1,4 +1,4 @@
 Fabricator(:client) do
-  first_name     "Ronald"
-  last_name      "Duck"
+  first_name     {Faker::Name.name}
+  last_name      {Faker::Name.name}
 end
