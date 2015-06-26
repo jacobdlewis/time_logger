@@ -41,4 +41,4 @@
           %div.report-title
             %h2 Mileage by employee
           %div.report-content
-            = bar_chart @time_entries.group('users.name').sum(:business_mileage), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+            = bar_chart @time_entries.group('users.name').sum(:business_mileage), :library => {hAxis: {title: "Miles"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
