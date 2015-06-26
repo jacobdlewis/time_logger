@@ -144,3 +144,10 @@ $success-color: #e6efc2 !default;
 .flash-success {
   @include flash($success-color);
 }
+
+
+@media (max-width: 600px) {
+  .name {
+    display: none;
+  }
+}

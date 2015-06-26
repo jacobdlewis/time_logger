@@ -4,11 +4,12 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title TimeLogger
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "//www.google.com/jsapi"
     = javascript_include_tag 'chartkick.js'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
     = csrf_meta_tags
   %body
     %header
@@ -19,7 +20,6 @@
               %h1
                 =link_to "Time Logger", root_path
             %li.toggle-topbar.menu-icon
-              %a(href="#")
                 %span Menu
           %section.top-bar-section
             %ul.right
@@ -41,7 +41,7 @@
                 %li
                   =link_to "Log Time", new_user_time_entry_path(current_user)
                 %li
-                  =link_to "Show Logged Time", user_time_entries_path(current_user)
+                  =link_to "Show Time", user_time_entries_path(current_user)
                 %li
                   =link_to "Sign Out", user_session_path, method: :delete
     %div.row
