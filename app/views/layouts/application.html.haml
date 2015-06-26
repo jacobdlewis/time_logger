@@ -38,10 +38,11 @@
                     =link_to "Categories", categories_path
                   %li
                     =link_to "Clients", clients_path
-                %li
-                  =link_to "Log Time", new_user_time_entry_path(current_user)
-                %li
-                  =link_to "Show Time", user_time_entries_path(current_user)
+                -if !current_user.admin?
+                  %li
+                    =link_to "Log Time", new_user_time_entry_path(current_user)
+                  %li
+                    =link_to "Show Time", user_time_entries_path(current_user)
                 %li
                   =link_to "Sign Out", user_session_path, method: :delete
     %div.row

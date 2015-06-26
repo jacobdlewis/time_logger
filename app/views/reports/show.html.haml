@@ -1,42 +1,44 @@
 %div.row
-  %div.small-12.columns
-    %h1.page-title  Reporting Dashboard
-    %hr
-%div.row
-  %div.small-12.columns
-    %ul.report-navigation
-      %li.small-4.columns
-        =link_to "Filtered by Week", report_path(duration: :week), class: "button btn-active", id: "week-button"
-      %li.small-4.columns
-        =link_to "Filtered by Month", report_path(duration: :month), class: "report-button button", id: "month-button"
-      %li.small-4.columns
-        =link_to "Filtered by Year", report_path(duration: :year), class: "report-button button", id: "year-button"
-%div.row
-  %div.download-csv
-    =link_to "Export as CSV", report_path(format: :csv)
-%div.row
-  %div.small-6.columns
-    %div.report-card
-      %div.report-title
-        %h2 Hours by employee
-      %div.report-content
-        = bar_chart @time_entries.group('users.name').sum(:hours_worked), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
-  %div.small-6.columns
-    %div.report-card
-      %div.report-title
-        %h2 Hours by category
-      %div.report-title
-        = pie_chart @time_entries.group('categories.name').sum(:hours_worked), :library => {colors: ["#98c1d9", "#6969b3", "#faf8d4", "plum", "#643378"]}
-%div.row
-  %div.small-6.columns
-    %div.report-card
-      %div.report-title
-        %h2 Hours by client
-      %div.report-content
-        = bar_chart @time_entries.group('clients.last_name').sum(:hours_worked), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Client"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
-  %div.small-6.columns
-    %div.report-card
-      %div.report-title
-        %h2 Mileage by employee
-      %div.report-content
-        = bar_chart @time_entries.group('users.name').sum(:business_mileage), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+  %div.small-10.columns.small-offset-1
+    %div.row
+      %div.small-12.columns
+        %h1.page-title  Reporting Dashboard
+        %hr
+    %div.row
+      %div.small-12.columns
+        %ul.report-navigation
+          %li.small-12.large-4.columns
+            =link_to "Filtered by Week", report_path(duration: :week), class: "button btn-active", id: "week-button"
+          %li.small-12.large-4.columns
+            =link_to "Filtered by Month", report_path(duration: :month), class: "report-button button", id: "month-button"
+          %li.small-12.large-4.columns
+            =link_to "Filtered by Year", report_path(duration: :year), class: "report-button button", id: "year-button"
+    %div.row
+      %div.download-csv
+        =link_to "Export as CSV", report_path(format: :csv)
+    %div.row
+      %div.small-12.large-6.columns
+        %div.report-card
+          %div.report-title
+            %h2 Hours by employee
+          %div.report-content
+            = bar_chart @time_entries.group('users.name').sum(:hours_worked), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+      %div.small-12.large-6.columns
+        %div.report-card
+          %div.report-title
+            %h2 Hours by category
+          %div.report-title
+            = pie_chart @time_entries.group('categories.name').sum(:hours_worked), :library => {colors: ["#98c1d9", "#6969b3", "#faf8d4", "plum", "#643378"]}
+    %div.row
+      %div.small-12.large-6.columns
+        %div.report-card
+          %div.report-title
+            %h2 Hours by client
+          %div.report-content
+            = bar_chart @time_entries.group('clients.last_name').sum(:hours_worked), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Client"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
+      %div.small-12.large-6.columns
+        %div.report-card
+          %div.report-title
+            %h2 Mileage by employee
+          %div.report-content
+            = bar_chart @time_entries.group('users.name').sum(:business_mileage), :library => {hAxis: {title: "Hours"}, vAxis: {title: "Employee"}, colors: ["#98c1d9", "#6969b3", "#faf8d4", "#a054b7", "#643378"]}
