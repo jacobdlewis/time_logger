@@ -30,7 +30,7 @@ feature "User views their time entries", js: true do
     select("8", :from => "Hours worked")
     click_on "Save Time Entry"
     page.should have_content("Your time for #{Date.today.strftime("%A, %B %d, %Y")} was saved successfully")
-    click_on "Show Logged Time"
+    click_on "Show Time"
     page.should have_content("Time Entries for Smitty")
     page.should have_content("#{Date.today.strftime("%A, %B %d, %Y")} - 8 hours")
     click_on "#{Date.today.strftime("%A, %B %d, %Y")} - 8 hours"
