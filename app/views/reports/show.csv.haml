@@ -1,5 +1,4 @@
-- headers = ['Name', 'Email']
+- headers = ['Date', 'Employee_ID', 'Employee_Name', 'Client', 'Category', 'Comment', 'Area', 'Business_Mileage', 'Personal_Mileage', 'Hours_Worked']
 = CSV.generate_line headers
 - @time_entries.each do |entry|
-  = CSV.generate_line([entry.user.name, entry.user.email])
-  
+  = CSV.generate_line([entry.date, entry.user.id, entry.user.name, entry.client.last_name, entry.category.name, entry.comment, entry.area, entry.business_mileage, entry.personal_mileage, entry.hours_worked])
