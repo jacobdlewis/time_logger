@@ -7,5 +7,12 @@ class ReportsController < ApplicationController
     else
       @time_entries = TimeEntry.all.joins(:user).joins(:category).joins(:client)
     end
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition']="attachment; filename=\"time_log_report\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
   end
 end

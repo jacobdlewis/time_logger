@@ -145,6 +145,9 @@ $success-color: #e6efc2 !default;
   @include flash($success-color);
 }
 
+.download-csv {
+  text-align: center;
+}
 
 @media (max-width: 600px) {
   .name {
