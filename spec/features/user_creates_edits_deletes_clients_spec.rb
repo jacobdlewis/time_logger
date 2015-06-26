@@ -15,7 +15,6 @@ feature "User creates and views categories" do
 
   scenario "logged in user creates, edits, and deletes a client" do
     page.should have_content("Sign Out")
-    page.should have_content("Log Time")
     page.should have_content("Categories")
     page.should have_content("Clients")
     click_link "Clients"
