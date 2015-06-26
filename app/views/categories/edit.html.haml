@@ -1,7 +1,9 @@
-%h1 Update category
+.row
+  .small-10.columns.small-offset-1
+    %h1.page-title Update category
+    %hr
+    = simple_form_for @category do |f|
+      = f.input :name, label: "Enter a new category name"
+      = f.button :submit, "Update category", :class => "button"
 
-= simple_form_for @category do |f|
-  = f.input :name, label: "Enter a new category name"
-  = f.button :submit, "Update category", :class => "button"
-
-=link_to "Cancel", categories_path, class: "button"
+    =link_to "Cancel", categories_path, class: "button"

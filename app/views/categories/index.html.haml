@@ -1,14 +1,20 @@
-%h1 Current categories:
-
-%table
-  %thead
-    %th Category name
-    %th
-  %tbody
-    -@categories.each do |category|
-      %tr
-        %td #{category.name}
-        %td
-          =link_to "Update", edit_category_path(category)
-
-=link_to "Create new category", new_category_path, class: "button"
+.row
+  .small-10.columns.small-offset-1
+    %h1.page-title Current categories:
+    %hr
+    .row
+      .large-4.columns.large-offset-4
+        %table.clients-table
+          %thead
+            %th Category name
+            %th
+          %tbody
+            -@categories.each do |category|
+              %tr
+                %td #{category.name}
+                %td
+                  =link_to "Update", edit_category_path(category)
+    .row
+      .large-6.columns.large-offset-4
+        =link_to "Create category", new_category_path, class: "button"
+        =link_to "Cancel", root_path, class: "button"
