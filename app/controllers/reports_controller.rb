@@ -19,4 +19,9 @@ class ReportsController < ApplicationController
   def employees
     @employees = User.all
   end
+
+  def employee_report
+    @user = User.find(params[:id])
+    @time_entries = @user.time_entries.all.joins(:user).joins(:category).joins(:client)
+  end
 end
