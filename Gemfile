@@ -3,7 +3,6 @@ ruby '2.2.2'
 
 gem 'cancancan',  '~> 1.10'
 gem 'chartkick'
-gem 'csv'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'foundation-rails'
 gem 'figaro'
