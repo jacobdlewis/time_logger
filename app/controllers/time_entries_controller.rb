@@ -14,6 +14,8 @@ class TimeEntriesController < ApplicationController
   end
 
   def create
+    @categories = Category.all
+    @clients = Client.all
     @time_entry = TimeEntry.new(time_entry_params)
     @time_entry.user_id = current_user.id
     if @time_entry.save
