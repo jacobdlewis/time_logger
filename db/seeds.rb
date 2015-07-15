@@ -9,8 +9,9 @@
 
 #Users
 
-Fabricate(:user, name: 'Jacob Lewis', email: "jacobdlewis@gmail.com", admin?: true)
-5.times do
+Fabricate(:user, name: 'Administrator', email: "admin@gmail.com", admin?: true)
+Fabricate(:user, name: 'John Doe', email: "johndoe@gmail.com", admin?: false)
+4.times do
   name = Faker::Name.name
   user = Fabricate(:user, name: name, username: name)
 end
