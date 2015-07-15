@@ -5,7 +5,7 @@ feature "User creates and views categories" do
     click_on "Sign In"
     user = Fabricate(:user, name: "Smitty", admin?: true)
     fill_in "Email", with: user.email
-    fill_in "Password", with: "password1"
+    fill_in "Password", with: "password"
     click_button "Sign In"
     page.should have_content("Welcome back, Smitty")
     page.should_not have_content("Sign In")

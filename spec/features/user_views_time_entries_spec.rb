@@ -5,10 +5,10 @@ feature "User views their time entries", js: true do
     visit "/"
     click_on "Sign In"
     Fabricate(:category).save
-    Fabricate(:client).save
+    Fabricate(:client, first_name: "Ronald", last_name: "Duck").save
     user = Fabricate(:user, name: "Smitty")
     fill_in "Email", with: user.email
-    fill_in "Password", with: "password1"
+    fill_in "Password", with: "password"
     click_button "Sign In"
     page.should have_content("Welcome back, Smitty")
     page.should_not have_content("Sign In")

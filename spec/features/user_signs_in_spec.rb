@@ -9,7 +9,7 @@ feature "User signs in" do
   scenario "Returning customer signs in" do
     user = Fabricate(:user, name: "Jenny")
     fill_in "Email", with: user.email
-    fill_in "Password", with: "password1"
+    fill_in "Password", with: "password"
     click_button "Sign In"
     page.should have_content("Welcome back, Jenny")
     page.should_not have_content("Sign In")
@@ -31,7 +31,7 @@ feature "User signs in" do
     page.should_not have_content("Create your account")
     page.should_not have_content("Password confirmation")
     field_labeled("Email").value.should == user.email
-    fill_in "Password", with: "password1"
+    fill_in "Password", with: "password"
     click_button "Sign In"
     page.should have_content("Welcome back, Bob")
   end

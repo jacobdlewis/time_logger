@@ -10,15 +10,15 @@ feature "User Signs Up" do
     fill_in "Name", with: "Joe"
     fill_in "Username", with: "example_user"
     fill_in "Email", with: "joe@example.com"
-    fill_in "Password", with: "password1"
-    fill_in "Password confirmation", with: "password1"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
     fill_in "Username", with: "example_user"
     click_button "Sign Up"
     page.should have_content("Welcome, Joe")
     click_on "Sign Out"
     click_on "Sign In"
     fill_in "Email", with: "joe@example.com"
-    fill_in "Password", with: "password1"
+    fill_in "Password", with: "password"
     click_button "Sign In"
     page.should have_content("Welcome back, Joe")
   end
@@ -27,7 +27,7 @@ feature "User Signs Up" do
     fill_in "Name", with: ""
     fill_in "Username", with: "example_user"
     fill_in "Email", with: "joeexample.com"
-    fill_in "Password", with: "password1"
+    fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "food"
     click_on "Sign Up"
     page.should have_css(".flash-alert", text: "Please fix the errors below to continue.")
@@ -37,8 +37,8 @@ feature "User Signs Up" do
 
     fill_in "Name", with: "Sally"
     fill_in "Email", with: "joe@example.com"
-    fill_in "Password", with: "password1"
-    fill_in "Password confirmation", with: "password1"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
     click_on "Sign Up"
     page.should have_content("Welcome, Sally")
   end
