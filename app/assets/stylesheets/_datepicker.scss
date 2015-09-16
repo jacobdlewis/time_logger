@@ -1,0 +1,23 @@
+@import 'colors';
+
+.ui-datepicker {
+  border: 1px solid $dark-purple;
+  .ui-datepicker-header {
+    border-bottom: 1px solid $dark-purple;
+    background-color: white;
+    text-align: center;
+  }
+  .ui-datepicker-title {
+    font-weight: bold;
+  }
+  .ui-datepicker-next:before {
+    content: " | ";
+  }
+  .ui-datepicker-today {
+    font-weight: bold;
+    background-color: $dark-purple;
+    a {
+      color: white;
+    }
+  }
+}
