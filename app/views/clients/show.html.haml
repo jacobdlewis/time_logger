@@ -1,0 +1,4 @@
+%h1 Projects for #{@client.first_name}
+-if @client.projects
+  -@client.projects.each do |project|
+    %p #{project.name}

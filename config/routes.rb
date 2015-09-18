@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
   end
   resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
-  resources :clients, only: [:new, :create, :index, :destroy, :edit, :update]
+  resources :clients
   get '/reports/', to: 'reports#show', as: 'report'
   get '/employees/', to: 'reports#employees', as: 'employees'
   get 'employees/:id/report', to: 'reports#employee_report', as: 'employee_report'
