@@ -1,4 +1,3 @@
-%h1 Hello indexed projects!
 %div.small-12.columns
   %h1.page-title Active Projects
   %hr
@@ -13,4 +12,4 @@
           %td
             =link_to "#{project.name}", project_path(project.id)
           %td
-            ="#{project.client.last_name}"
+            =link_to "#{project.client.last_name}", client_path(project.client.id)
