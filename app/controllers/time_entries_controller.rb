@@ -6,16 +6,16 @@ class TimeEntriesController < ApplicationController
     @clients = Client.all
     @time_entry = TimeEntry.new
     @categories = Category.all
+    @projects = Project.all
   end
 
   def edit
     @categories = Category.all
     @clients = Client.all
+    @projects = Project.all
   end
 
   def create
-    @categories = Category.all
-    @clients = Client.all
     @time_entry = TimeEntry.new(time_entry_params)
     @time_entry.user_id = current_user.id
     if @time_entry.save
@@ -50,7 +50,7 @@ class TimeEntriesController < ApplicationController
   protected
 
   def time_entry_params
-    params.require(:time_entry).permit(:date, :client_id, :category_id, :comment, :area, :business_mileage, :personal_mileage, :hours_worked)
+    params.require(:time_entry).permit(:date, :client_id, :category_id, :comment, :area, :business_mileage, :personal_mileage, :hours_worked, :project_id)
   end
 
   def load_time_entry

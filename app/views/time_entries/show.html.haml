@@ -15,6 +15,10 @@
         %tr
           %th Category
           %td #{@time_entry.category.name}
+        -if !@time_entry.project.nil?
+          %tr
+            %th Project
+            %td #{@time_entry.project.name}
         %tr
           %th Comment
           %td #{@time_entry.comment}
