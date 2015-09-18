@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'password_resets/create'
   get 'password_resets/edit'
   get 'password_resets/update'
-
+  resources :projects
+  resources :password_resets
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create] do
     resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
@@ -16,7 +17,6 @@ Rails.application.routes.draw do
   resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
   resources :clients, only: [:new, :create, :index, :destroy, :edit, :update]
   get '/reports/', to: 'reports#show', as: 'report'
-  resources :password_resets
   get '/employees/', to: 'reports#employees', as: 'employees'
   get 'employees/:id/report', to: 'reports#employee_report', as: 'employee_report'
 

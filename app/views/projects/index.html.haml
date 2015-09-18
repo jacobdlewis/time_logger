@@ -1,0 +1,16 @@
+%h1 Hello indexed projects!
+%div.small-12.columns
+  %h1.page-title Active Projects
+  %hr
+  %table.time-entries-table
+    %thead
+      %tr
+        %td Project
+        %td Client
+    %tbody
+      -@projects.each do |project|
+        %tr
+          %td
+            =link_to "#{project.name}", project_path(project.id)
+          %td
+            ="#{project.client.last_name}"
