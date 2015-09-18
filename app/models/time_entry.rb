@@ -6,6 +6,7 @@ class TimeEntry < ActiveRecord::Base
             presence: true
   validates :client_id, :category_id, :business_mileage,
             :personal_mileage, :hours_worked, numericality: true
+  validates :project_id, :numericality => {:allow_blank => true}
 
   scope :last_month, -> { where(:date => Date.today.beginning_of_month..Date.today.end_of_month) }
   scope :last_year, -> { where(:date => Date.today.beginning_of_year..Date.today.end_of_year) }
