@@ -1,2 +1,6 @@
-%h1 Projects#new
-%p Find me in app/views/projects/new.html.haml
+%h1 Create a project
+
+= simple_form_for [@project] do |f|
+  = f.input :name, as: :string, label: "Enter the project's name"
+  = f.input :client_id, collection: @clients.map{ |c| ["#{c.last_name}, #{c.first_name}", c.id]}
+  = f.button :submit, :class => "btn-button button"
