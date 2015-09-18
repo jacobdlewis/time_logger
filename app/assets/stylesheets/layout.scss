@@ -1,17 +1,23 @@
-@import 'button';
+@import 'buttons';
 @import 'colors';
 @import 'datepicker';
 @import 'flash_alert';
 @import 'reports';
 
-body, html {
-  background-color: plum;
+
+body {
+  background-image: url('geometric_purple_background.jpg');
+}
+
+a {
+  color: $dark-purple;
+  a:visited {
+    color: $light-purple;
+  }
 }
 
 .container {
-  background-color: $dark-purple;
-  width: 100%;
-  min-height: 100%;
+  border-radius: 5px;
 }
 
 .clients-table, .category-table, .employees-table, .time-entries-table {
@@ -23,7 +29,7 @@ body, html {
   background-color: white;
   box-shadow: 0 0 3px $dark-purple;
   padding-top: 10px;
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
 .page-title {
