@@ -1,5 +1,6 @@
 class Client < ActiveRecord::Base
   has_many :time_entries
+  has_many :projects
   extend FriendlyId
   friendly_id :last_name, use: [:slugged, :finders]
 
