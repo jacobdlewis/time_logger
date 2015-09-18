@@ -2,7 +2,4 @@
   .small-10.columns.small-offset-1
     %h1.page-title Create a new category
     %hr
-    = simple_form_for @category do |f|
-      = f.input :name, label: "Enter a category name"
-      = f.button :submit, "Save category", class: "button"
-      =link_to "Cancel", categories_path, class: "button"
+    =render partial: 'form'
