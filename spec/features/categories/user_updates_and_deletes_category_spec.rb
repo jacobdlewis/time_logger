@@ -20,7 +20,6 @@ feature "User creates and views categories" do
     page.should have_content("Categories")
     click_link "Categories"
     page.should have_content("Current categories:")
-    page.should have_content("Create category")
     click_link "Create category"
     page.should have_content("Create a new category")
     fill_in "Enter a category name", with: "Management plan"
@@ -37,8 +36,8 @@ feature "User creates and views categories" do
     page.should have_content("Update")
     click_link "Update"
     page.should have_content("Update category")
-    fill_in "Enter a new category name", with: "Run in place"
-    click_button "Update category"
+    fill_in "Enter a category name", with: "Run in place"
+    click_button "Save category"
     page.should have_content("Run in place was updated successfully")
   end
 
