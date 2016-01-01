@@ -39,8 +39,8 @@ class TimeEntriesController < ApplicationController
   end
 
   def index
-    @user = User.find(current_user.id)
-    @time_entries = @user.time_entries.order(:date)
+    @user = current_user
+    @time_entries = (@user.time_entries.order('date desc')).paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

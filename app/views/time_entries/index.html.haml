@@ -8,4 +8,4 @@
           %tr
             %td
               = link_to "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours", user_time_entry_path(current_user, entry.id)
-
+    = will_paginate @time_entries, renderer: BootstrapPagination::Rails
