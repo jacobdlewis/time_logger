@@ -4,21 +4,26 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+  #devise/sessions
   root 'home#index'
   get 'password_resets/create'
   get 'password_resets/edit'
   get 'password_resets/update'
-  resources :projects
   resources :password_resets
   resource :user_session, only: [:new, :create, :destroy]
+
+  #resources
+  resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
+  resources :clients
+  resources :projects
+  resources :activities
   resources :users, only: [:new, :create] do
     resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
   end
-  resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
-  resources :clients
-  get '/reports/', to: 'reports#show', as: 'report'
-  get '/employees/', to: 'reports#employees', as: 'employees'
-  get 'employees/:id/report', to: 'reports#employee_report', as: 'employee_report'
+  #get '/reports/', to: 'reports#show', as: 'report'
+  #get '/employees/', to: 'reports#employees', as: 'employees'
+  #get 'employees/:id/report', to: 'reports#employee_report', as: 'employee_report'
 
 
   # Example of regular route:
