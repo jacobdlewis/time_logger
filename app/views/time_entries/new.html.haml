@@ -1,4 +1,4 @@
 %h1 Enter time
 
 =render partial: 'time_entries/form', locals: { user: current_user, time_entry: @time_entry, clients: @clients, categories: @categories, projects: @projects }
-= link_to "Cancel", root_path, class: "button"
+= link_to "Cancel", root_path, class: "button", data: {confirm: "Are you sure you want to cancel?"}
