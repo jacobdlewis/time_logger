@@ -3,38 +3,28 @@
     %h1.page-title Time Entry for #{current_user.name}
     %hr
 %div.row
-  %div.small-column-6.small-offset-5
-    %table
-      %tbody
-        %tr
-          %th Date
-          %td #{@time_entry.date.strftime("%b %d, %Y")}
-        %tr
-          %th Client
-          %td #{@time_entry.client.last_name}, #{@time_entry.client.first_name[0]}.
-        %tr
-          %th Category
-          %td #{@time_entry.category.name}
-        -if !@time_entry.project.nil?
-          %tr
-            %th Project
-            %td #{@time_entry.project.name}
-        %tr
-          %th Comment
-          %td #{@time_entry.comment}
-        %tr
-          %th Area
-          %td #{@time_entry.area}
-        %tr
-          %th Bus. Mileage
-          %td #{@time_entry.business_mileage}
-        %tr
-          %th Pers. Mileage
-          %td #{@time_entry.personal_mileage}
-        %tr
-          %th Hours worked
-          %td #{@time_entry.hours_worked}
+  %table
+    %thead
+      %tr
+        %th Date
+        %th Project
+        %th Activity
+        %th Comment
+        %th Area
+        %th Bus. Mileage
+        %th Pers. Mileage
+        %th Hours Worked
+    %tbody
+      %tr
+        %td #{@time_entry.date.strftime("%b %d, %Y")}
+        %td #{@time_entry.project.name}
+        %td #{@time_entry.activity.name}
+        %td #{@time_entry.comment}
+        %td #{@time_entry.area}
+        %td #{@time_entry.business_mileage}
+        %td #{@time_entry.personal_mileage}
+        %td #{@time_entry.hours_worked}
 %div.row
-  %div.small-column-6.small-offset-5
+  %div.small-column-6.small-offset-1
     = link_to "Back", user_time_entries_path(current_user), class: "button"
     = link_to "Update entry", edit_user_time_entry_path(current_user, @time_entry, @clients, @categories), class: "button"

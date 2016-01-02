@@ -1,7 +1,7 @@
 
-Fabricate(:user, name: 'Administrator', email: "admin@gmail.com", admin?: true )
-Fabricate(:user, name: 'John Doe', email: "johndoe@gmail.com", admin?: false )
-Fabricate(:user, name: 'Jane Doe', email: "janedoe@gmail.com", admin?: false )
+Fabricate(:user, username: 'admin', name: 'Administrator', email: "admin@gmail.com", admin?: true )
+Fabricate(:user, username: 'johndoe', name: 'John Doe', email: "johndoe@gmail.com", admin?: false )
+Fabricate(:user, username: 'janedoe', name: 'Jane Doe', email: "janedoe@gmail.com", admin?: false )
 
 #Categories
 Fabricate(:category, name: "Appraisal")

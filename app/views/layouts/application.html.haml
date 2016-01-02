@@ -28,6 +28,10 @@
                   %li
                     = link_to "Sign In", new_user_session_path
               - else
+                %li
+                  =link_to "Log Time", new_user_time_entry_path(current_user)
+                %li
+                  =link_to "Show Time", user_time_entries_path(current_user)
                 -if current_user.admin?
                   %li
                     =link_to "Activities", activities_path
@@ -37,11 +41,6 @@
                     =link_to "Clients", clients_path
                   %li
                     =link_to "Projects", projects_path
-                -if !current_user.admin?
-                  %li
-                    =link_to "Show Time", user_time_entries_path(current_user)
-                %li
-                  =link_to "Log Time", new_user_time_entry_path(current_user)
                 %li
                   =link_to "Sign Out", user_session_path, method: :delete
     %div.row
