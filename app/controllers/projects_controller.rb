@@ -20,7 +20,19 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def edit
+    @project = Project.find(params[:id])
+  end
+
   def update
+    @project = Project.find(params[:id])
+    if @project.update(project_params)
+      flash[:notice] = "Project updated successfully"
+      redirect_to projects_path
+    else
+      flash[:error] = "Project not updated"
+      redirect_to :back
+    end
   end
 
   protected
