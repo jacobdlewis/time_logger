@@ -1,0 +1,26 @@
+.row
+  .small-12.columns
+    .div.small-10.colums.small-offset-1
+      %h2 Detailed Report for #{@project.name}
+      %div.report-card
+        %div.report-title
+          %h2 Hours by activity
+        %div.report-content
+          = pie_chart @time_entries.group('activities.name').sum(:activity_id), :library => {:colors => [ "#6969b3", "plum", "#98c1d9", "#643378", "#faf8d4"]}
+      %hr
+      %div
+        %h2 Hours breakdown
+        .small-6.columns
+          %h3 Employee totals
+          %ul
+          - @user_totals.each do |user, total|
+            %li #{user}: #{total}
+        .small-6.columns
+          %h3 Activity totals
+          %ul
+          - @activity_totals.each do |activity, total|
+            %li #{activity}: #{total}
+      %br
+      %br
+      %br
+

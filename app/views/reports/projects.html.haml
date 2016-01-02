@@ -1,0 +1,22 @@
+%div.small-12.columns
+  %h1.page-title Active Projects
+  %hr
+  - if @projects.empty?
+    %p There are no projects at this time.
+  - else
+    %table.time-entries-table
+      %thead
+        %tr
+          %td Project
+          %td Report
+      %tbody
+        -@projects.each do |project|
+          %tr
+            %td
+              = "#{project.name}"
+            %td
+              = link_to "View Report", reports_detail_report_path(project)
+  %div.row
+    =link_to "Create Project", new_project_path, class: "btn-button button small-6 columns small-offset-3"
+
+

@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create] do
     resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
   end
+  namespace :reports do
+    get :projects
+    get :detail_report
+  end
   #get '/reports/', to: 'reports#show', as: 'report'
   #get '/employees/', to: 'reports#employees', as: 'employees'
   #get 'employees/:id/report', to: 'reports#employee_report', as: 'employee_report'
