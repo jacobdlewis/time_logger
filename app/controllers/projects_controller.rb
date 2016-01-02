@@ -4,7 +4,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @clients = Client.all
   end
 
   def create
@@ -27,7 +26,7 @@ class ProjectsController < ApplicationController
   protected
 
   def project_params
-    params.require(:project).permit(:name, :client_id)
+    params.require(:project).permit(:name, :client_id, :category_id)
   end
 
 end

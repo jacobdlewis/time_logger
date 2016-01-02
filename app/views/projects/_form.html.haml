@@ -1,0 +1,5 @@
+= simple_form_for [@project] do |f|
+  = f.association :client
+  = f.association :category
+  = f.input :name, as: :string, label: "Enter the project's name"
+  = f.button :submit, :class => "btn-button button"

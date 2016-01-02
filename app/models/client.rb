@@ -9,4 +9,8 @@ class Client < ActiveRecord::Base
   validates :first_name, :last_name, format: { without: /\d/, message: "Client name cannot contain number characters."}
   validates :first_name, :last_name, format: { without: /[@!$%&*]/, message: "Client name cannot contain any of these characters - @!$%&*"}
 
+def name
+  "#{last_name}, #{first_name}"
+end
+
 end
