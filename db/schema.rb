@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160102004456) do
+ActiveRecord::Schema.define(version: 20160102013152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -36,7 +42,7 @@ ActiveRecord::Schema.define(version: 20160102004456) do
   add_index "clients", ["slug"], name: "index_clients_on_slug", unique: true, using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name"
+    t.string   "handle"
     t.integer  "client_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -46,8 +52,6 @@ ActiveRecord::Schema.define(version: 20160102004456) do
 
   create_table "time_entries", force: :cascade do |t|
     t.datetime "date"
-    t.integer  "client_id"
-    t.integer  "category_id"
     t.string   "comment"
     t.string   "area"
     t.integer  "business_mileage"
@@ -57,6 +61,7 @@ ActiveRecord::Schema.define(version: 20160102004456) do
     t.datetime "updated_at",       null: false
     t.integer  "user_id"
     t.integer  "project_id"
+    t.integer  "activity_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -79,7 +84,5 @@ ActiveRecord::Schema.define(version: 20160102004456) do
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true, using: :btree
 
   add_foreign_key "projects", "categories"
-  add_foreign_key "time_entries", "categories"
-  add_foreign_key "time_entries", "clients"
   add_foreign_key "time_entries", "users"
 end

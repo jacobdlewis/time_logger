@@ -1,0 +1,18 @@
+%h1 Manage Activities
+
+- if @activities.empty?
+  %p There are no activities yet.
+- else
+  %table
+    %thead
+      %th Activity
+      %th
+    %tbody
+    - @activities.each do |activity|
+      %tr
+        %td
+          = activity.name
+        %td
+          = link_to "Edit", edit_activity_path(activity), class: "button"
+%br
+= link_to "Create an Activity", new_activity_path, class: "button"

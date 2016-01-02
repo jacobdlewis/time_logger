@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   resource :user_session, only: [:new, :create, :destroy]
 
   #resources
+  resources :activities, except: [:destroy]
   resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
   resources :clients
   resources :projects
-  resources :activities
   resources :users, only: [:new, :create] do
     resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
   end

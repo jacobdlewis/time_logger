@@ -1,0 +1,4 @@
+= simple_form_for @activity do |f|
+      = f.input :name, label: "Enter an activity name"
+      = f.button :submit, "Save activity", class: "button"
+      =link_to "Cancel", activities_path, class: "button"

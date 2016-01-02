@@ -1,7 +1,7 @@
 Fabricator(:time_entry) do
   date   { Faker::Date.forward(1) }
-  client_id             "12"
-  category_id           "8"
+  project_id            (1..4)
+  activity_id           (1..4)
   comment               { Faker::Lorem.sentence }
   area                  "01A"
   business_mileage      "20"

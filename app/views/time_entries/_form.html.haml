@@ -1,9 +1,8 @@
 
 = simple_form_for [current_user, @time_entry] do |f|
   = f.input :date, as: :string, label: "Enter a Date"
-  = f.input :client_id, collection: @clients.map{ |c| ["#{c.last_name}, #{c.first_name}", c.id] }
-  = f.input :category_id, collection: @categories.map{ |c| ["#{c.name}", c.id] }
-  = f.input :project_id, collection: @projects.map{ |p| ["#{p.name}", p.id] }
+  = f.association :project, collection: Project.includes(:client).order('clients.last_name asc')
+  = f.association :activity, collection: Activity.order('name asc')
   = f.input :comment, :input_html => { :value => 'none' }
   = f.input :area, :input_html => { :value => '070' }
   = f.input :hours_worked, collection: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0, 9.5, 10.0], selected: 1

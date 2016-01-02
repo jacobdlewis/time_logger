@@ -18,6 +18,7 @@ class TimeEntriesController < ApplicationController
   def create
     @time_entry = TimeEntry.new(time_entry_params)
     @time_entry.user_id = current_user.id
+    binding.pry
     if @time_entry.save
       redirect_to root_path, notice: "Your time for #{@time_entry.date.strftime("%A, %B %d, %Y")} was saved successfully."
     else
@@ -50,7 +51,7 @@ class TimeEntriesController < ApplicationController
   protected
 
   def time_entry_params
-    params.require(:time_entry).permit(:date, :client_id, :category_id, :comment, :area, :business_mileage, :personal_mileage, :hours_worked, :project_id)
+    params.require(:time_entry).permit(:date, :activity_id, :comment, :area, :business_mileage, :personal_mileage, :hours_worked, :project_id)
   end
 
   def load_time_entry
