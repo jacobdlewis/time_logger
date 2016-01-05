@@ -3,7 +3,7 @@
     %h1.page-title Current client list:
     %hr
     .row
-      .large-4.columns.large-offset-4
+      .small-6.columns
         %table.categories-table
           %thead
             %th Last name
@@ -16,6 +16,12 @@
                 %td #{client.first_name}
                 %td
                   =link_to "Update", edit_client_path(client)
+      %div.small-6.columns
+        %div.panel.panel-default
+          %div.panel-heading
+            %h3.panel-title Why create clients?
+          %div.panel-body
+            %p Creating clients makes it faster to create projects down the road. When you create a project, you choose from a list of predefined clients created in this portion of the application.
     .row
       .large-6.columns.large-offset-4
         =link_to "Add a client", new_client_path, class: "button"

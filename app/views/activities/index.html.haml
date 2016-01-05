@@ -1,6 +1,9 @@
 .row
-  .large-4.columns.large-offset-4
-    %h1 Manage Activities
+  .small-offset-3
+    .small-9.columns
+      %h1 Manage Activities
+.row
+  .small-4.columns.small-offset-2
     - if @activities.empty?
       %p There are no activities yet.
     - else
@@ -15,5 +18,10 @@
               = activity.name
             %td
               = link_to "Edit", edit_activity_path(activity)
-    %br
     = link_to "Create an Activity", new_activity_path, class: "button"
+  %div.small-6.columns
+    %div.panel.panel-default
+      %div.panel-heading
+        %h3.panel-title Activities explained
+      %div.panel-body
+        %p Activities are the smallest predefined groups that an employee can log time under. When an employee logs time, they select a project like "Brown, Adam - Timber Sale - Summer 2014." Once the project is selected, the employee picks an Activity to more tightly define what work they did. For the project mentioned above, they might choose Cruising if they performed a cruise in preparation for Adam Brown's timber sale.

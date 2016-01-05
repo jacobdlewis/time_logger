@@ -1,5 +1,14 @@
-= simple_form_for [@project] do |f|
-  = f.association :client
-  = f.association :category
-  = f.input :handle, as: :string, label: "Enter the project's name"
-  = f.button :submit, :class => "btn-button button"
+.row
+  .small-6.columns
+    = simple_form_for [@project] do |f|
+      = f.association :client
+      = f.association :category
+      = f.input :handle, as: :string, label: "Enter the project's name"
+      = f.button :submit, :class => "btn-button button"
+  .small-6.columns
+    %div.panel.panel-default
+      %div.panel-heading
+        %h3.panel-title Naming projects:
+      %div.panel-body
+        %p A project's name is what helps it stand out from other projects. The name is comprised of "{Client_last, Client_first - Category - project_name}". So, if you enter 'Brown, John' for client, 'Burning' for Category, and 'Winter 2016' for the project name, you'll see:
+        %p Brown, John - Burning - Winter 2016
