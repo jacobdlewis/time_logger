@@ -35,6 +35,28 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def close
+    @project = Project.find(params[:project_id])
+    if @project.update(active: false)
+      flash[:notice] = "Project closed"
+      redirect_to :back
+    else
+      flash[:error] = "Project couldn't be closed"
+      redirect_to :back
+    end
+  end
+
+  def reopen
+    @project = Project.find(params[:project_id])
+    if @project.update(active: true)
+      flash[:notice] = "Project reopened"
+      redirect_to :back
+    else
+      flash[:error] = "Project couldn't be reopened"
+      redirect_to :back
+    end
+  end
+
   protected
 
   def project_params

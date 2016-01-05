@@ -4,18 +4,30 @@
   - if @projects.empty?
     %p There are no projects at this time.
   - else
-    %table.time-entries-table
-      %thead
-        %tr
-          %td Project
-          %td Client
-      %tbody
-        -@projects.each do |project|
+    %div.small-6.columns
+      %table.time-entries-table
+        %thead
           %tr
-            %td
-              =project.name
-            %td
-              = link_to "Edit project", edit_project_path(project)
+            %th Project
+            %th Client
+            %th Close/reopen project
+        %tbody
+          -@projects.each do |project|
+            %tr
+              %td
+                =project.name
+              %td
+                = link_to "Edit project", edit_project_path(project)
+              %td
+                = toggle_activation_button(project)
+    %div.small-6.columns
+      %div.panel.panel-default
+        %div.panel-heading
+          %h3.panel-title Project status:
+        %div.panel-body
+          %p A project's status determines whether it appears in the list of projects employees choose from when logging their time. Employees see only active projects in their time entry forms. Administrators can see both active and closed projects, and they are able to report on projects in either status.
+          %p You can toggle a project's status by clicking 'Close project' or 'Reopen project' next to the project you want to change.
+
   %div.row
     =link_to "Create Project", new_project_path, class: "btn-button button small-6 columns small-offset-3"
 

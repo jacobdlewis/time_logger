@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   resources :activities, except: [:destroy]
   resources :categories, only: [:new, :index, :create, :destroy, :edit, :update]
   resources :clients
-  resources :projects
+  resources :projects do
+    get :close
+    get :reopen
+  end
   resources :users, only: [:new, :create] do
     resources :time_entries, only: [:create, :edit, :new, :update, :index, :show]
   end
