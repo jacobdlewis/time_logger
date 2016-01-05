@@ -26,9 +26,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
-    binding.pry
     if @project.update(project_params)
-      binding.pry
       flash[:notice] = "Project updated successfully"
       redirect_to projects_path
     else
