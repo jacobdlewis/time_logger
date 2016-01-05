@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
   end
 
   def index
-    @clients = Client.all
+    @clients = Client.order('last_name asc')
   end
 
   def destroy

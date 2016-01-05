@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.includes(:client).order('clients.last_name asc')
   end
 
   def edit
@@ -26,7 +26,9 @@ class ProjectsController < ApplicationController
 
   def update
     @project = Project.find(params[:id])
+    binding.pry
     if @project.update(project_params)
+      binding.pry
       flash[:notice] = "Project updated successfully"
       redirect_to projects_path
     else
@@ -38,7 +40,7 @@ class ProjectsController < ApplicationController
   protected
 
   def project_params
-    params.require(:project).permit(:name, :client_id, :category_id)
+    params.require(:project).permit(:handle, :client_id, :category_id)
   end
 
 end

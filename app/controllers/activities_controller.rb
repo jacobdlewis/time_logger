@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
   def index
-    @activities = Activity.all
+    @activities = Activity.order('name asc')
   end
 
   def new

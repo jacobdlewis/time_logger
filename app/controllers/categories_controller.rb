@@ -15,7 +15,7 @@ class CategoriesController < ApplicationController
   end
 
   def index
-    @categories = Category.all
+    @categories = Category.order('name asc')
   end
 
   def destroy
