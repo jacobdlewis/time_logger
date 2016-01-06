@@ -18,7 +18,6 @@ class TimeEntriesController < ApplicationController
   def create
     @time_entry = TimeEntry.new(time_entry_params)
     @time_entry.user_id = current_user.id
-    binding.pry
     if @time_entry.save
       redirect_to root_path, notice: "Your time for #{@time_entry.date.strftime("%A, %B %d, %Y")} was saved successfully."
     else
