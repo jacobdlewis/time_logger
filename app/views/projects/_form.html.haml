@@ -1,10 +1,10 @@
 .row
   .small-6.columns
     = simple_form_for [@project] do |f|
-      = f.association :client
-      = f.association :category
+      = f.association :client, collection: Client.order('last_name asc')
+      = f.association :category, collection: Category.order('name asc')
       = f.input :handle, as: :string, label: "Enter the project's name"
-      = f.button :submit, :class => "btn-button button"
+      = f.button :submit, :class => "btn-button button", data: { disable_with: "Saving..." }
   .small-6.columns
     %div.panel.panel-default
       %div.panel-heading
