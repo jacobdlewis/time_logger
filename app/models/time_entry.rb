@@ -2,6 +2,7 @@ class TimeEntry < ActiveRecord::Base
   belongs_to :user
   belongs_to :activity
   belongs_to :project
+  has_one :client, through: :project
   validates :date, :project_id, :activity_id, :business_mileage, :personal_mileage, :hours_worked,
             presence: true
   validates :project_id, :activity_id, :business_mileage,
