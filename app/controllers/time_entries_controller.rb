@@ -40,7 +40,11 @@ class TimeEntriesController < ApplicationController
 
   def index
     @user = current_user
-    @time_entries = (@user.time_entries.order('date desc')).paginate(:page => params[:page], :per_page => 10)
+    @time_entries = (@user.time_entries
+                            .includes(:project)
+                            .includes(:activity)
+                            .order('date desc'))
+                            .paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

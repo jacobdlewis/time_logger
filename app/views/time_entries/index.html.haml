@@ -4,8 +4,17 @@
     %hr
     %table.time-entries-table
       %tbody
+        %thead
+          %th Date
+          %th Project
+          %th Activity
+          %th Hours Worked
+          %th Show Entry
         -@time_entries.each do |entry|
           %tr
-            %td
-              = link_to "#{entry.date.strftime("%A, %B %d, %Y")} - #{entry.hours_worked} hours", user_time_entry_path(current_user, entry.id)
+            %td= entry.date.strftime("%a, %b %d, %Y")
+            %td= entry.project.name
+            %td= entry.activity.name
+            %td= entry.hours_worked
+            %td= link_to "Show Entry", user_time_entry_path(current_user, entry.id)
     = will_paginate @time_entries, renderer: BootstrapPagination::Rails
