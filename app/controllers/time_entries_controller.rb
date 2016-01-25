@@ -10,9 +10,7 @@ class TimeEntriesController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
-    @clients = Client.all
-    @projects = Project.all
+    @time_entry = TimeEntry.find(params[:id])
   end
 
   def create
