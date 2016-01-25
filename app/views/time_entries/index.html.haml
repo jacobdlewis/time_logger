@@ -12,7 +12,7 @@
           %th Show Entry
         -@time_entries.each do |entry|
           %tr
-            %td= entry.date.strftime("%a, %b %d, %Y")
+            %td= entry.date
             %td= entry.project.name
             %td= entry.activity.name
             %td= entry.hours_worked
