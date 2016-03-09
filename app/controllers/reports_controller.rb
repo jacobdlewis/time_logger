@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   def projects
-    @projects = Project.includes(:client).active
+    @projects = Project.includes(:client).active.order("clients.last_name")
   end
 
   def detail_report
