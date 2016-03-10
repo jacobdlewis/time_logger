@@ -9,6 +9,8 @@
           %th Project
           %th Activity
           %th Hours
+          %th Pers. Mileage
+          %th Bus. Mileage
           %th Show Entry
           %th Edit Entry
         -@time_entries.each do |entry|
@@ -17,6 +19,8 @@
             %td= entry.project.name
             %td= entry.activity.name
             %td= entry.hours_worked
+            %td= entry.personal_mileage
+            %td= entry.business_mileage
             %td= link_to "Show Entry", user_time_entry_path(current_user, entry.id)
             %td= link_to "Edit Entry", edit_user_time_entry_path(current_user, entry)
     .small-6-columns.small-offset-1
