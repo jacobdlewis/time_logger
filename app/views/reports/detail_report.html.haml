@@ -10,6 +10,14 @@
 .row
   %div.small-10.columns.small-offset-1
     %div
+      %h2 Mileage breakdown
+      %ul
+        %li Total mileage: #{@project.total_mileage}
+        %li Personal mileage: #{@project.personal_mileage}
+        %li Business mileage: #{@project.business_mileage}
+.row
+  %div.small-10.columns.small-offset-1
+    %div
       %h2 Hours breakdown
       .small-6.columns
         %h3 Employee totals
@@ -24,4 +32,3 @@
 .row
   .small-6.columns.small-offset-1
     = link_to "Back to project list", reports_projects_path, class: "button"
-
