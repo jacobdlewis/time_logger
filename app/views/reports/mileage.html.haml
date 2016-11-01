@@ -1,0 +1,50 @@
+
+.row.search-area
+  .small-12.columns
+    %h4 Search Employee Mileage
+    = search_form_for @q, url: reports_mileage_path do |f|
+      .row
+        .small-6.columns
+          = f.label :user_id
+          = f.select :user_id_eq, options_from_collection_for_select(User.all, "id", "name", @q.user_id_eq), prompt: "Select one..."
+        .small-6.columns
+          = f.label :project_id
+          = f.select :project_id_eq, options_from_collection_for_select(Project.all, "id", "name", @q.project_id_eq), prompt: "Select one..."
+      .row
+        .small-2.columns
+          = f.submit class: "btn-button button"
+        .button.btn-button
+          = link_to "See All Results", reports_mileage_path
+%hr
+- unless params[:q].nil?
+  .row
+    .small-12.columns
+      %h4 Totals
+      %div
+        %strong Business Mileage:
+        %span= " #{@business_total}"
+      %div
+        %strong Personal Mileage:
+        %span= " #{@personal_total}"
+  %hr
+.row
+  .small-12.columns
+    %h4 Results
+    %table
+      %thead
+        %tr
+          %th Date
+          %th Employee
+          %th Project
+          %th Activity
+          %th Business mileage
+          %th Personal mileage
+      %tbody
+        - @time_entries.each do |entry|
+          %tr
+            %td= entry.date
+            %td= entry.user.name
+            %td= entry.project.name
+            %td= entry.activity.name
+            %td= entry.business_mileage
+            %td= entry.personal_mileage
