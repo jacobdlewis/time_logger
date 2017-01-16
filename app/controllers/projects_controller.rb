@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
     else
       @projects = @projects.active
     end
+    @projects = @projects.paginate(:page => params[:page], :per_page => 10)
   end
 
   def edit
