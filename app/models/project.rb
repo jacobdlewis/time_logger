@@ -7,6 +7,7 @@ class Project < ActiveRecord::Base
   validates :client_id, :category_id, numericality: true
 
   scope :active, -> { where(active: true) }
+  scope :inactive, -> { where(active: false) }
 
   def name
     "#{client.last_name}, #{client.first_name} - #{category.name} - #{handle}"

@@ -18,6 +18,11 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.includes(:client).order('clients.last_name asc')
+    if params[:closed]
+      @projects = @projects.inactive
+    else
+      @projects = @projects.active
+    end
   end
 
   def edit
