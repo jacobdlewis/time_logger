@@ -25,6 +25,7 @@ class ReportsController < ApplicationController
       @personal_total = @time_entries.sum(:personal_mileage) || "None"
       @business_total = @time_entries.sum(:business_mileage) || "None"
     end
+    @time_entries = @time_entries.paginate(:page => params[:page], :per_page => 10)
   end
 
 end

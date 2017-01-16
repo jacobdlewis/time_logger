@@ -48,3 +48,6 @@
             %td= entry.activity.name
             %td= entry.business_mileage
             %td= entry.personal_mileage
+.row
+  .small-12.columns
+    = will_paginate @time_entries, renderer: BootstrapPagination::Rails
