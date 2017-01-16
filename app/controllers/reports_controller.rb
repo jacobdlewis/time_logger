@@ -19,7 +19,7 @@ class ReportsController < ApplicationController
   end
 
   def mileage
-    @q = TimeEntry.ransack(params[:q])
+    @q = TimeEntry.includes(:project, :client, :activity, :user ).ransack(params[:q])
     @time_entries = @q.result(distinct: true)
     unless params[:q].nil?
       @personal_total = @time_entries.sum(:personal_mileage) || "None"
