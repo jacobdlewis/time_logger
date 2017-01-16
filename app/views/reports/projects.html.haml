@@ -1,20 +1,21 @@
-%div.small-12.columns
-  %h1.page-title Report on Active Projects
-  %hr
-  - if @projects.empty?
-    %p There are no projects at this time.
-  - else
-    %table.time-entries-table
-      %thead
-        %tr
-          %td Project
-          %td Report
-      %tbody
-        -@projects.each do |project|
+%div.row
+  %div.small-12.columns
+    %h1.page-title Report on Active Projects
+    %hr
+    - if @projects.empty?
+      %p There are no projects at this time.
+    - else
+      %table.time-entries-table
+        %thead
           %tr
-            %td
-              = "#{project.name}"
-            %td
-              = link_to "View hours breakdown report", reports_detail_report_path(project)
-
-
+            %td Project
+            %td Report
+        %tbody
+          -@projects.each do |project|
+            %tr
+              %td
+                = "#{project.name}"
+              %td
+                = link_to "View hours breakdown report", reports_detail_report_path(project)
+.small-12.columns
+  = will_paginate @projects, renderer: BootstrapPagination::Rails
