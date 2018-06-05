@@ -16,7 +16,6 @@ class ClientsController < ApplicationController
 
   def index
     @clients = Client.order('last_name asc')
-    @clients = @clients.paginate(:page => params[:page], :per_page => 10)
   end
 
   def destroy
