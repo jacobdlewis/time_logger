@@ -35,7 +35,6 @@ class TimeEntriesController < ApplicationController
                             .includes(:project)
                             .includes(:activity)
                             .order('date desc'))
-                            .paginate(:page => params[:page], :per_page => 10)
   end
 
   def show

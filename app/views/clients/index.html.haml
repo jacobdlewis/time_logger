@@ -16,9 +16,6 @@
                 %td #{client.first_name}
                 %td
                   =link_to "Update", edit_client_path(client)
-        .row
-          .small-12.columns
-            = will_paginate @projects, renderer: BootstrapPagination::Rails
       %div.small-6.columns
         %div.panel.panel-default
           %div.panel-heading

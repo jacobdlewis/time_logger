@@ -23,5 +23,3 @@
             %td= entry.business_mileage
             %td= link_to "Show Entry", user_time_entry_path(current_user, entry.id)
             %td= link_to "Edit Entry", edit_user_time_entry_path(current_user, entry)
-    .small-6-columns.small-offset-1
-      = will_paginate @time_entries, renderer: BootstrapPagination::Rails

@@ -1,6 +1,6 @@
 %div.row
   %div.small-12.columns
-    %h1.page-title Active Projects
+    %h1.page-title= @title
     %hr
     - if @projects.empty?
       %p There are no projects at this time.
@@ -22,9 +22,6 @@
                     = link_to "Edit project", edit_project_path(project)
                   %td
                     = toggle_activation_button(project)
-        %div.row
-          %div.small-offset-1
-            = will_paginate @projects, renderer: BootstrapPagination::Rails
       %div.small-6.columns
         %div.panel.panel-default
           %div.panel-heading

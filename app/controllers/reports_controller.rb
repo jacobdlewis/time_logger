@@ -1,7 +1,6 @@
 class ReportsController < ApplicationController
   def projects
     @projects = Project.includes(:client).active.order("clients.last_name")
-    @projects = @projects.paginate(:page => params[:page], :per_page => 10)
   end
 
   def detail_report

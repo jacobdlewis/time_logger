@@ -19,11 +19,12 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.includes(:client).order('clients.last_name asc')
     if params[:closed]
+      @title = 'Closed Projects'
       @projects = @projects.inactive
     else
+      @title = 'Active Projects'
       @projects = @projects.active
     end
-    @projects = @projects.paginate(:page => params[:page], :per_page => 10)
   end
 
   def edit
