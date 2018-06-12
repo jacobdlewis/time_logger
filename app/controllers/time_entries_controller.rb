@@ -2,10 +2,12 @@ class TimeEntriesController < ApplicationController
 
   def new
     @time_entry = TimeEntry.new
+    load_select_options
   end
 
   def edit
     @time_entry = TimeEntry.find(params[:id])
+    load_select_options
   end
 
   def create
@@ -53,6 +55,11 @@ class TimeEntriesController < ApplicationController
     else
       @time_entry = TimeEntry.new
     end
+  end
+
+  def load_select_options
+    @projects = Project.includes(:client).includes(:category).order('clients.last_name asc').active
+    @activities = Activity.order('name asc')
   end
 
 end
