@@ -20,10 +20,10 @@ class ProjectsController < ApplicationController
     @projects = Project.includes(:client).order('clients.last_name asc')
     if params[:closed]
       @title = 'Closed Projects'
-      @projects = @projects.inactive
+      @projects = @projects.includes(:category).inactive
     else
       @title = 'Active Projects'
-      @projects = @projects.active
+      @projects = @projects.includes(:category).active
     end
   end
 
