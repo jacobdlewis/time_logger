@@ -36,6 +36,8 @@ class TimeEntriesController < ApplicationController
     @time_entries = (current_user.time_entries
                             .includes(:project)
                             .includes(:activity)
+                            .includes(:client)
+                            .includes(:category)
                             .order('date desc'))
   end
 
